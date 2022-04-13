@@ -1,6 +1,6 @@
 # BOOKING TRAIN
 
-<div style="display=flex;flex-diretion:row;justify-content: center; align-items: center" ><img src="public/assets/home_thumb.svg"></img></div>
+<div style="display=flex;flex-diretion:row;justify-content: center; align-items: center" ><img src="https://simplonline.co/_next/image?url=https%3A%2F%2Fsimplonline-v3-prod.s3.eu-west-3.amazonaws.com%2Fmedia%2Fimage%2Fjpg%2Fef774c0a-9057-4216-a6ce-fca38e3a402c.jpg&w=1280&q=75"></img></div>
 
 <div class="sc-7lcum6-0 edCusw"><h2 class="ekeyz-0 dPTSJD">Project context</h2><div><div><p class="ekeyz-0 jasXoh">Un client vous a approché pour numériser son besoin de créer un forum de news IT, afin de partager des intérêts communs au sein d'une meme communauté, il fait appel à tes compétences en tant que développeur web full stack.</p>
 <p class="ekeyz-0 jasXoh">​</p>
@@ -36,3 +36,14 @@
 <p class="ekeyz-0 jasXoh">L'utilisation des API's est optionnel.</p>
 <p class="ekeyz-0 jasXoh">L'envoi d'un email notifiant l'utilisateur d'une réponse sur l'un de ses posts.</p>
 </div></div></div>
+
+<div class="sc-7lcum6-0 edCusw"><h2 class="ekeyz-0 dPTSJD">Learning methods</h2><div><div><p class="ekeyz-0 jasXoh">Modalité de travail : Travail Individuel</p>
+<p class="ekeyz-0 jasXoh">Temporalité : 7 Jours</p>
+<p class="ekeyz-0 jasXoh">Date Limite : le 20 Avril 2022</p>
+</div></div></div>
+
+<div class="sc-7lcum6-0 edCusw"><h2 class="ekeyz-0 dPTSJD">Deliverables</h2><p class="ekeyz-0 jasXoh">Planification du brief ( Taches , Priorités , Statuts ,  Outil : Trello , ..... ). (1 jour)
+Partie Front end (3 jours )
+Partie Back end (3 jours )
+Repo Github contenant l'application. (6 jours )
+Un support de présentation du brief (le 20 avril 2022) .</p></div>
