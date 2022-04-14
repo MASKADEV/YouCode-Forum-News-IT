@@ -188,13 +188,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Article_vue_vue_type_template_id_23568506_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Article.vue?vue&type=template&id=23568506&ts=true&lang=true */ "./resources/js/componenets/home/Article.vue?vue&type=template&id=23568506&ts=true&lang=true");
 /* harmony import */ var _Article_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Article.vue?vue&type=script&lang=ts */ "./resources/js/componenets/home/Article.vue?vue&type=script&lang=ts");
-/* harmony import */ var C_Users_youcode_desktop_forum_news_ts_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_youcode_desktop_forum_news_ts_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Article_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Article_vue_vue_type_template_id_23568506_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/home/Article.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Article_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Article_vue_vue_type_template_id_23568506_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/home/Article.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -215,13 +215,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Home_vue_vue_type_template_id_6604427f_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=6604427f&ts=true&lang=true */ "./resources/js/componenets/home/Home.vue?vue&type=template&id=6604427f&ts=true&lang=true");
 /* harmony import */ var _Home_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=ts */ "./resources/js/componenets/home/Home.vue?vue&type=script&lang=ts");
-/* harmony import */ var C_Users_youcode_desktop_forum_news_ts_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_youcode_desktop_forum_news_ts_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Home_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Home_vue_vue_type_template_id_6604427f_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/home/Home.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Home_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Home_vue_vue_type_template_id_6604427f_ts_true_lang_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/home/Home.vue"]])
 /* hot reload */
 if (false) {}
 
