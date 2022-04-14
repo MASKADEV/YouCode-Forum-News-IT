@@ -2,7 +2,9 @@
     <div class="w-full bg-gray-200 h-screen">
         <h1>a</h1>
         <div class="container mx-auto mt-14 md:pl-[19rem] pl-[2rem]">
-            <h1>Trending</h1>
+            <div class="mb-8 h-[50px] flex flex-row items-center">
+                <h1 class="hover:cursor-pointer hover:text-3xl w-[120px] text-center text-2xl font-bold hover:text-black text-gray-500">Trending</h1>
+                <h1 class="hover:cursor-pointer hover:text-3xl w-[120px] text-center text-2xl ml-4 font-bold hover:text-black text-gray-500">Recent</h1>            </div>
             <Article :title="title" :body="body" 
                     :created_at="created_at" 
                     :created_by="created_by"

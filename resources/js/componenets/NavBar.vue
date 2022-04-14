@@ -6,8 +6,8 @@
             </div>
             <nav>
                 <ul class="flex flex-row items-center">
-                    <li class="px-3 mr-2 py-2 text-base font-medium hover:cursor-pointer">Login</li>
-                    <li class="px-3 mr-2 py-2 text-base font-medium hover:cursor-pointer">Register</li>
+                    <router-link to="/login"><li class="px-3 mr-2 py-2 text-base font-medium hover:cursor-pointer">Login</li></router-link>
+                    <router-link to="/register"><li class="px-3 mr-2 py-2 text-base font-medium hover:cursor-pointer">Register</li></router-link>
                 </ul>
             </nav>
        </div>
