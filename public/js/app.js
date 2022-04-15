@@ -17503,9 +17503,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
-  setup: function setup() {}
+  setup: function setup() {
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
+    var show = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(store.state);
+
+    var consoleME = function consoleME() {
+      store.commit("showPost");
+    };
+
+    return {
+      consoleME: consoleME
+    };
+  }
 }));
 
 /***/ }),
@@ -17606,6 +17619,8 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
+  var _component_ion_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ion-icon");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/login"
   }, {
@@ -17624,7 +17639,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])])])]);
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    onClick: _cache[0] || (_cache[0] = //@ts-ignore
+    function () {
+      return _ctx.consoleME && _ctx.consoleME.apply(_ctx, arguments);
+    }),
+    "class": "mr-2 text-3xl font-medium hover:cursor-pointer"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ion_icon, {
+    name: "add-circle-outline"
+  })])])])])]);
 }
 
 /***/ }),
@@ -17795,6 +17818,12 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_componenets_auth_login_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../componenets/auth/login/Login.vue */ "./resources/js/componenets/auth/login/Login.vue"));
   }
+}, {
+  path: "/register",
+  name: "Register",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_componenets_auth_register_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../componenets/auth/register/Register.vue */ "./resources/js/componenets/auth/register/Register.vue"));
+  }
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(process.env.BASE_URL),
@@ -17818,25 +17847,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 
 var state = {
-  show: false
+  show: false,
+  addPost: false
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_0__.createStore)({
   state: state,
   mutations: {
     showNav: function showNav(state, payload) {
       state.show = !state.show;
-      console.log(state.show);
+    },
+    showPost: function showPost(state, payload) {
+      state.addPost = !state.addPost;
     }
   },
   actions: {
     showNav: function showNav(_ref) {
       var commit = _ref.commit;
       commit("showNav");
+    },
+    showPost: function showPost(_ref2) {
+      var commit = _ref2.commit;
+      commit("showPost");
+      console.log(state.addPost);
     }
   },
   getters: {
-    show: function show(state) {
+    showNav: function showNav(state) {
       return state.show;
+    },
+    showPost: function showPost(state) {
+      return state.addPost;
     }
   },
   modules: {}
@@ -23552,7 +23592,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_componenets_home_Home_vue":1,"resources_js_componenets_auth_login_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_componenets_home_Home_vue":1,"resources_js_componenets_auth_login_Login_vue":1,"resources_js_componenets_auth_register_Register_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

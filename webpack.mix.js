@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 require('laravel-mix-purgecss');
+mix.browserSync('127.0.0.1:8000');
+
 
 mix.ts('resources/js/app.ts', 'public/js')
     .vue({version : 3}).postCss("resources/css/app.css", "public/css", [
