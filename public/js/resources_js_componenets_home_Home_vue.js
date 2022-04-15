@@ -19,8 +19,14 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup() {
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
     var show = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(store.state);
+
+    var closeForm = function closeForm() {
+      store.commit('showPost');
+    };
+
     return {
-      show: show
+      show: show,
+      closeForm: closeForm
     };
   }
 }));
@@ -102,14 +108,29 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "bg-white mt-24 rounded-2xl flex flex-col justify-start shadow-2xl h-[500px] w-[350px] right-[25%] fixed"
+  "class": "bg-white mt-24 rounded-2xl flex flex-col justify-start shadow-2xl h-[500px] w-[350px] sm:right-[25%] right-5 fixed"
+};
+var _hoisted_2 = {
+  action: "",
+  "class": "flex flex-col justify-center items-center"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<form action=\"\" class=\"flex flex-col justify-center items-center\"><div class=\"flex mt-5 flex-col w-[280px]\"><label class=\"mt-9\" for=\"title\">Title*</label><input id=\"title\" class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"text\" placeholder=\"title\"></div><div class=\"flex flex-col w-[280px]\"><label class=\"mt-9\" for=\"body\">Description*</label><input id=\"body\" class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"text\" placeholder=\"Description\"></div><div class=\"flex flex-col w-[280px]\"><label class=\"mt-9\" for=\"Image\">Upload File</label><input class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"file\"></div><div class=\"flex flex-row justify-between items-center mt-9\"><button class=\"px-4 rounded-lg py-2 bg-indigo-700 font-medium text-white\">Add Post</button><button class=\"px-3 py-2 font-medium text-black\">Cancel</button></div></form>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex mt-5 flex-col w-[280px]\"><label class=\"mt-9\" for=\"title\">Title*</label><input id=\"title\" class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"text\" placeholder=\"title\"></div><div class=\"flex flex-col w-[280px]\"><label class=\"mt-9\" for=\"body\">Description*</label><input id=\"body\" class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"text\" placeholder=\"Description\"></div><div class=\"flex flex-col w-[280px]\"><label class=\"mt-9\" for=\"Image\">Upload File</label><input class=\"py-2 px-3 mt-2 border-gray-400 border-2 rounded-lg\" type=\"file\"></div>", 3);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_6 = {
+  "class": "flex flex-row justify-between items-center mt-9"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return _ctx.show.addPost ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  return _ctx.show.addPost ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["prevent"])),
+    "class": "px-4 mr-3 rounded-lg py-2 bg-indigo-700 font-medium text-white"
+  }, "Add Post"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)( //@ts-ignore
+    function () {
+      return _ctx.closeForm && _ctx.closeForm.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "ml-3 px-3 py-2 font-medium text-black"
+  }, "Cancel")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),

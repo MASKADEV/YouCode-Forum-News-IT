@@ -14,8 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
-  setup: function setup() {},
-  created: function created() {}
+  setup: function setup() {}
 }));
 
 /***/ }),
@@ -36,7 +35,7 @@ var _hoisted_1 = {
   "class": "md:ml-28 w-screen h-screen bg-slate-200"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-20 flex flex-col items-center\"><div class=\"flex flex-col justify-start w-[300px] items-start\"><h1 class=\"flex flex-row items-center mt-11 font-semibold text-2xl\">Login</h1><h1 class=\"flex flex-row items-center mt-1 font-normal text-sm\">Welcome Back!</h1></div><form class=\"w-[300px] mt-11 flex flex-col\"><div class=\"flex flex-col\"><label class=\"text-sm\" for=\"email\">Email*</label><input id=\"email\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"email\" placeholder=\"mail@website.com\"></div><div class=\"flex mt-3 flex-col\"><label class=\"text-sm\" for=\"password\">Password*</label><input id=\"password\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"password\" placeholder=\"password\"></div><button class=\"mt-3 text-1xl text-white font-medium px-4 py-2 bg-indigo-600 rounded-xl\">Sign in</button></form><div class=\"mt-5 text-sm text-white font-thin px-4 py-2 bg-red-400 rounded-md\"><p>Error Error Error Error Error Error Error </p></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-20 flex flex-col items-center\"><form class=\"w-[350px] mt-24 flex flex-col bg-white py-4 px-4 shadow-1xl rounded-2xl\"><h1 class=\"text-center text-1xl my-3 text-indigo-600 font-bold\">Login</h1><div class=\"flex flex-col\"><label class=\"text-sm\" for=\"email\">Email*</label><input id=\"email\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"email\" placeholder=\"mail@website.com\"></div><div class=\"flex mt-3 flex-col\"><label class=\"text-sm\" for=\"password\">Password*</label><input id=\"password\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"password\" placeholder=\"password\"></div><button class=\"mt-3 text-1xl text-white font-medium px-4 py-2 bg-indigo-600 rounded-xl\">Sign in</button><div class=\"mt-5 text-sm text-white font-thin px-4 py-2 bg-red-400 rounded-md\"><p>Error Error Error Error Error Error Error </p></div></form></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {

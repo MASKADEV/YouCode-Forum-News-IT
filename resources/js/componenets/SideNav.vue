@@ -25,10 +25,12 @@
                         </div>
                     </li>
                    <li class="py-2 my-2 ml-3 mt-4 font-medium font-[Poppins] hover:cursor-pointer hover:font-bold">
-                       <div class="flex flex-row items-center">
-                            <ion-icon name="person-outline"></ion-icon>
-                            <h3 class="px-3">Profile</h3>
-                        </div>
+                       <router-link to="/profile">
+                            <div class="flex flex-row items-center">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <h3 class="px-3">Profile</h3>
+                            </div>
+                        </router-link>
                     </li>
                    <li class="py-2 my-2 ml-3 mt-4 font-medium font-[Poppins] hover:cursor-pointer hover:font-bold">
                        <div class="flex flex-row items-center">

@@ -17,22 +17,9 @@ export default createStore({
       }
     },
     actions: {
-      showNav({ commit }) {
-        commit("showNav");
-      },
-      showPost({commit}) {
-        commit("showPost");
-        console.log(state.addPost);
-      }
     },
     
     getters: {
-      showNav(state) {
-        return state.show;
-      },
-      showPost(state) {
-        return state.addPost;
-      }
     },
     modules: {}
 });

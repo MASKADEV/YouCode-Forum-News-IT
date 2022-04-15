@@ -2,7 +2,7 @@
    <div class="fixed w-full h-12 shadow-1xl bg-gray-100 z-20 flex items-center">
        <div class="container mx-auto flex flex-row items-center justify-between">
             <div class="ml-2">
-            <h1 class=" text-indigo-600 md:text-3xl text-xl font-bold hover:cursor-pointer">Brand.</h1>
+            <router-link to="/"><h1 class=" text-indigo-600 md:text-3xl text-xl font-bold hover:cursor-pointer">Brand.</h1></router-link>
             </div>
             <nav>
                 <ul class="flex flex-row items-center ">
