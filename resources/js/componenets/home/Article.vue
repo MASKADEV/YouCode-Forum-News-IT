@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-3 shadow-md rounded-xl">
+    <div class="w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl">
         <div class="flex flex-row items-center justify-between h-[6rem]">
             <div class="flex flex-col">
                 <h1 class="font-bold sm:text-2xl text-base w-[80%]">{{ title }}</h1>

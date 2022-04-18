@@ -1,7 +1,9 @@
 <template lang="">
-    <div class="w-full bg-gray-200">
+    <div class="w-full h-full bg-gray-200">
         <h1>a</h1>
-        <div class="container mx-auto mt-11 md:pl-[19rem] pl-[2rem]">
+        <div class ="flex flex-row container mt-11 mx-auto">
+            <!-- Menu side -->
+            <div class="md:w-[70%] container md:pl-[19rem] pl-[2rem]">
             <div class="mb-4 h-[50px] flex flex-row items-center">
                 <h1 class="hover:cursor-pointer hover:text-3xl w-[120px] text-center text-2xl font-bold hover:text-black text-gray-500">Trending</h1>
                 <h1 class="hover:cursor-pointer hover:text-3xl w-[120px] text-center text-2xl ml-4 font-bold hover:text-black text-gray-500">Recent</h1>
@@ -11,7 +13,31 @@
                         :created_by="created_by"
                         :vote = "vote"
                         :image_path  = "image_path" 
-                />
+                    />
+                <Article :title="title" :body="body" 
+                        :created_at="created_at" 
+                        :created_by="created_by"
+                        :vote = "vote"
+                        :image_path  = "image_path" 
+                    />
+                <Article :title="title" :body="body" 
+                        :created_at="created_at" 
+                        :created_by="created_by"
+                        :vote = "vote"
+                        :image_path  = "image_path" 
+                    />
+                <Article :title="title" :body="body" 
+                        :created_at="created_at" 
+                        :created_by="created_by"
+                        :vote = "vote"
+                        :image_path  = "image_path" 
+                    />
+            </div>
+
+            <!-- Ads Banner -->
+            <div class="md:w-[25%] md:flex hidden">
+
+            </div>
         </div>
     </div>
     <AddPost />

@@ -14,7 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
-  setup: function setup() {}
+  setup: function setup() {},
+  created: function created() {}
 }));
 
 /***/ }),
@@ -32,14 +33,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "md:ml-28 w-screen h-screen bg-slate-200"
+  "class": "w-screen h-screen bg-slate-200"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-20 flex flex-col items-center\"><form class=\"w-[350px] mt-24 flex flex-col bg-white py-4 px-4 shadow-1xl rounded-2xl\"><h1 class=\"text-center text-1xl my-3 text-indigo-600 font-bold\">Login</h1><div class=\"flex flex-col\"><label class=\"text-sm\" for=\"email\">Email*</label><input id=\"email\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"email\" placeholder=\"mail@website.com\"></div><div class=\"flex mt-3 flex-col\"><label class=\"text-sm\" for=\"password\">Password*</label><input id=\"password\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"password\" placeholder=\"password\"></div><button class=\"mt-3 text-1xl text-white font-medium px-4 py-2 bg-indigo-600 rounded-xl\">Sign in</button><div class=\"mt-5 text-sm text-white font-thin px-4 py-2 bg-red-400 rounded-md\"><p>Error Error Error Error Error Error Error </p></div></form></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div>a</div><div class=\"mt-24 flex flex-col items-center justify-center\"><form class=\"w-[350px] mt-11 flex flex-col bg-white px-4 py-11 rounded-2xl shadow-1xl\"><h1 class=\"text-center text-indigo-600 flex flex-row items-center font-bold text-1xl\">Login</h1><div class=\"flex flex-col mt-5\"><label class=\"text-sm\" for=\"email\">Email*</label><input id=\"email\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"email\" placeholder=\"mail@website.com\"></div><div class=\"flex mt-3 flex-col\"><label class=\"text-sm\" for=\"password\">Password*</label><input id=\"password\" required class=\"py-3 px-2 mb-2 mt-1 text-sm rounded-xl border-2 border-gray-300\" type=\"password\" placeholder=\"password\"></div><button class=\"mt-3 text-1xl text-white font-medium px-4 py-2 bg-indigo-600 rounded-xl\">Sign in</button><div class=\"mt-5 text-sm text-white font-thin px-4 py-2 bg-red-400 rounded-md\"><p>Error Error Error Error Error Error Error </p></div></form></div>", 2);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_4 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
 }
 
 /***/ }),
@@ -56,13 +57,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Login_vue_vue_type_template_id_3113c4c8_ts_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.vue?vue&type=template&id=3113c4c8&ts=true */ "./resources/js/componenets/auth/login/Login.vue?vue&type=template&id=3113c4c8&ts=true");
 /* harmony import */ var _Login_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.vue?vue&type=script&lang=ts */ "./resources/js/componenets/auth/login/Login.vue?vue&type=script&lang=ts");
-/* harmony import */ var C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_mac_Desktop_Forum_News_IT_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_youcode_Desktop_forum_news_it_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Login_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Login_vue_vue_type_template_id_3113c4c8_ts_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/auth/login/Login.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_mac_Desktop_Forum_News_IT_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Login_vue_vue_type_script_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Login_vue_vue_type_template_id_3113c4c8_ts_true__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/componenets/auth/login/Login.vue"]])
 /* hot reload */
 if (false) {}
 
