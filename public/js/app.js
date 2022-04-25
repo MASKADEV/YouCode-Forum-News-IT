@@ -4368,9 +4368,15 @@ var Auth = function Auth() {
     className: 'w-screen h-screen bg-gray-100 relative'
   }, react_1["default"].createElement(NavBar_1["default"], null), react_1["default"].createElement("div", {
     className: 'm-auto relative'
-  }, react_1["default"].createElement(Signin_1["default"], null)), react_1["default"].createElement("div", {
-    className: "m-auto absolute top-[40px]"
-  }, react_1["default"].createElement(Signup_1["default"], null)));
+  }, react_1["default"].createElement(Signin_1["default"], {
+    register: register,
+    setRegister: setRegister
+  })), react_1["default"].createElement("div", {
+    className: "m-auto absolute top-[30px] ".concat(!register ? '-translate-x-[1100px]' : 'translate-x-0', " z-0 duration-300 ease-in-out")
+  }, react_1["default"].createElement(Signup_1["default"], {
+    register: register,
+    setRegister: setRegister
+  })));
 };
 
 exports["default"] = Auth;
@@ -4398,13 +4404,15 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var Signup = function Signup() {
+var Signup = function Signup(_ref) {
+  var setRegister = _ref.setRegister,
+      register = _ref.register;
   return react_1["default"].createElement("div", {
     className: 'w-screen mt-[10rem]'
   }, react_1["default"].createElement("div", {
     className: 'container mx-auto flex items-center justify-center'
   }, react_1["default"].createElement("form", {
-    className: "bg-white shadow-md rounded-md px-16 pt-6 pb-8 mb-4 m-auto"
+    className: "bg-white shadow-md rounded-md px-[5rem] pt-6 pb-8 mb-4 m-auto"
   }, react_1["default"].createElement("div", {
     className: "mb-4"
   }, react_1["default"].createElement("label", {
@@ -4453,6 +4461,9 @@ var Signup = function Signup() {
   }, "Sign Un")), react_1["default"].createElement("p", {
     className: 'text-[13px] mt-4'
   }, "you have an account? ", react_1["default"].createElement("span", {
+    onClick: function onClick() {
+      setRegister(!register);
+    },
     className: 'text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'
   }, "Sign in")))));
 };
@@ -4482,7 +4493,9 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var Signin = function Signin() {
+var Signin = function Signin(_ref) {
+  var setRegister = _ref.setRegister,
+      register = _ref.register;
   return react_1["default"].createElement("div", {
     className: 'w-screen mt-[10rem]'
   }, react_1["default"].createElement("div", {
@@ -4520,6 +4533,9 @@ var Signin = function Signin() {
   }, "Forgot Password?")), react_1["default"].createElement("p", {
     className: 'text-[13px] mt-4'
   }, "if you don't have an account? ", react_1["default"].createElement("span", {
+    onClick: function onClick() {
+      setRegister(!register);
+    },
     className: 'text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'
   }, "Register")))));
 };

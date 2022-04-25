@@ -11,10 +11,10 @@ const Auth = () => {
     <div className='w-screen h-screen bg-gray-100 relative'>
       <NavBar />
       <div className='m-auto relative'>
-        <Signin />
+        <Signin register={register} setRegister={setRegister} />
       </div>
-      <div className={`m-auto absolute top-[40px]`}>
-        <Signup />
+      <div className={`m-auto absolute top-[30px] ${!register ? '-translate-x-[1100px]' : 'translate-x-0'} z-0 duration-300 ease-in-out`}>
+        <Signup register={register} setRegister={setRegister} />
       </div>
     </div>
   )

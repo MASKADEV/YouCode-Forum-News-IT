@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Signin = () => {
+interface props {
+    setRegister : React.Dispatch<React.SetStateAction<boolean>>;
+    register : boolean;
+}
+
+const Signin = ({setRegister, register} : props) => {
   return (
     <div className='w-screen mt-[10rem]'>
         <div className='container mx-auto flex items-center justify-center'>
@@ -24,7 +29,7 @@ const Signin = () => {
                     Forgot Password?
                 </a>
                 </div>
-                <p className='text-[13px] mt-4'>if you don't have an account? <span className='text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'>Register</span></p>
+                <p className='text-[13px] mt-4'>if you don't have an account? <span onClick={() => {setRegister(!register)}} className='text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'>Register</span></p>
             </form>
         </div>
     </div>
