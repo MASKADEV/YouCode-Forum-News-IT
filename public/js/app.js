@@ -4262,17 +4262,17 @@ var NavBar = function NavBar() {
   }, react_1["default"].createElement("h1", {
     className: 'sm:text-2xl text-lg font-[Poppins] font-bold'
   }, "Brand."), react_1["default"].createElement("header", {
-    className: 'flex flex-row font-[Poppins]'
+    className: 'flex flex-row font-[Poppins] items-center'
   }, react_1["default"].createElement(inertia_react_1.Link, {
-    href: "/home",
+    href: "/",
     className: 'w-[60px] hover:cursor-pointer hover:font-bold font-medium'
   }, "Home"), react_1["default"].createElement(inertia_react_1.Link, {
     href: "/profile",
     className: 'w-[60px] hover:cursor-pointer hover:font-bold font-medium'
   }, "Profile"), react_1["default"].createElement(inertia_react_1.Link, {
-    href: "/signin",
-    className: 'w-[60px] hover:cursor-pointer hover:font-bold font-medium'
-  }, "Sign in")));
+    href: "/auth",
+    className: 'w-[120px] rounded-md ml-11 hover:cursor-pointer hover:font-bold font-medium px-3 py-2 bg-indigo-600 text-white shadow-md'
+  }, "Get Started")));
 };
 
 exports["default"] = NavBar;
@@ -4283,6 +4283,104 @@ exports["default"] = NavBar;
 /*!******************************************!*\
   !*** ./resources/js/Pages/Auth/Auth.tsx ***!
   \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var NavBar_1 = __importDefault(__webpack_require__(/*! ../../Components/NavBar */ "./resources/js/Components/NavBar.tsx"));
+
+var Signup_1 = __importDefault(__webpack_require__(/*! ./Register/Signup */ "./resources/js/Pages/Auth/Register/Signup.tsx"));
+
+var Signin_1 = __importDefault(__webpack_require__(/*! ./Signin/Signin */ "./resources/js/Pages/Auth/Signin/Signin.tsx"));
+
+var Auth = function Auth() {
+  var _ref = (0, react_1.useState)(false),
+      _ref2 = _slicedToArray(_ref, 2),
+      register = _ref2[0],
+      setRegister = _ref2[1];
+
+  return react_1["default"].createElement("div", {
+    className: 'w-screen h-screen bg-gray-100 relative'
+  }, react_1["default"].createElement(NavBar_1["default"], null), react_1["default"].createElement("div", {
+    className: 'm-auto relative'
+  }, react_1["default"].createElement(Signin_1["default"], null)), react_1["default"].createElement("div", {
+    className: "m-auto absolute top-[40px]"
+  }, react_1["default"].createElement(Signup_1["default"], null)));
+};
+
+exports["default"] = Auth;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/Register/Signup.tsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/Pages/Auth/Register/Signup.tsx ***!
+  \*****************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -4300,11 +4398,133 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var Auth = function Auth() {
-  return react_1["default"].createElement("div", null, "Auth");
+var Signup = function Signup() {
+  return react_1["default"].createElement("div", {
+    className: 'w-screen mt-[10rem]'
+  }, react_1["default"].createElement("div", {
+    className: 'container mx-auto flex items-center justify-center'
+  }, react_1["default"].createElement("form", {
+    className: "bg-white shadow-md rounded-md px-16 pt-6 pb-8 mb-4 m-auto"
+  }, react_1["default"].createElement("div", {
+    className: "mb-4"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "full_name"
+  }, "Full Name*"), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+    id: "full_name",
+    type: "text",
+    placeholder: "Full Name"
+  })), react_1["default"].createElement("div", {
+    className: "mb-4"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "email"
+  }, "Email*"), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+    id: "email",
+    type: "email",
+    placeholder: "Email"
+  })), react_1["default"].createElement("div", {
+    className: "mb-6"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "password"
+  }, "Password*"), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
+    id: "password",
+    type: "password",
+    placeholder: "******************"
+  })), react_1["default"].createElement("div", {
+    className: "mb-6"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "confirm_password"
+  }, "Confirme Password*"), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
+    id: "confirm_password",
+    type: "password",
+    placeholder: "******************"
+  })), react_1["default"].createElement("div", {
+    className: "flex items-center justify-center"
+  }, react_1["default"].createElement("button", {
+    className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+    type: "button"
+  }, "Sign Un")), react_1["default"].createElement("p", {
+    className: 'text-[13px] mt-4'
+  }, "you have an account? ", react_1["default"].createElement("span", {
+    className: 'text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'
+  }, "Sign in")))));
 };
 
-exports["default"] = Auth;
+exports["default"] = Signup;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/Signin/Signin.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Auth/Signin/Signin.tsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Signin = function Signin() {
+  return react_1["default"].createElement("div", {
+    className: 'w-screen mt-[10rem]'
+  }, react_1["default"].createElement("div", {
+    className: 'container mx-auto flex items-center justify-center'
+  }, react_1["default"].createElement("form", {
+    className: "bg-white shadow-md rounded-md px-11 pt-6 pb-8 mb-4 m-auto"
+  }, react_1["default"].createElement("div", {
+    className: "mb-4"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "email"
+  }, "Email"), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+    id: "email",
+    type: "email",
+    placeholder: "Email"
+  })), react_1["default"].createElement("div", {
+    className: "mb-6"
+  }, react_1["default"].createElement("label", {
+    className: "block text-gray-700 text-sm font-bold mb-2",
+    htmlFor: "password"
+  }, " Password "), react_1["default"].createElement("input", {
+    className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
+    id: "password",
+    type: "password",
+    placeholder: "******************"
+  })), react_1["default"].createElement("div", {
+    className: "flex items-center justify-between"
+  }, react_1["default"].createElement("button", {
+    className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+    type: "button"
+  }, "Sign In"), react_1["default"].createElement("a", {
+    className: "inline-block align-baseline font-bold ml-2 text-sm text-blue-500 hover:text-blue-800",
+    href: "#"
+  }, "Forgot Password?")), react_1["default"].createElement("p", {
+    className: 'text-[13px] mt-4'
+  }, "if you don't have an account? ", react_1["default"].createElement("span", {
+    className: 'text-indigo-600 ml-1 hover:cursor-pointer font-medium text-[15px]'
+  }, "Register")))));
+};
+
+exports["default"] = Signin;
 
 /***/ }),
 
@@ -59081,6 +59301,10 @@ module.exports = function getSideChannel() {
 var map = {
 	"./Auth/Auth": "./resources/js/Pages/Auth/Auth.tsx",
 	"./Auth/Auth.tsx": "./resources/js/Pages/Auth/Auth.tsx",
+	"./Auth/Register/Signup": "./resources/js/Pages/Auth/Register/Signup.tsx",
+	"./Auth/Register/Signup.tsx": "./resources/js/Pages/Auth/Register/Signup.tsx",
+	"./Auth/Signin/Signin": "./resources/js/Pages/Auth/Signin/Signin.tsx",
+	"./Auth/Signin/Signin.tsx": "./resources/js/Pages/Auth/Signin/Signin.tsx",
 	"./Home/Home": "./resources/js/Pages/Home/Home.tsx",
 	"./Home/Home.tsx": "./resources/js/Pages/Home/Home.tsx"
 };
