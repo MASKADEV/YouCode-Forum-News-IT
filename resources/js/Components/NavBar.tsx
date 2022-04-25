@@ -11,7 +11,6 @@ const NavBar = () => {
         <Link href="/signin" className='w-[60px] hover:cursor-pointer hover:font-bold font-medium'>Sign in</Link>
       </header>
     </div>
-
   )
 }
 

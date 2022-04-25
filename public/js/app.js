@@ -4339,37 +4339,6 @@ exports["default"] = Home;
 
 /***/ }),
 
-/***/ "./resources/js/Pages/index.tsx":
-/*!**************************************!*\
-  !*** ./resources/js/Pages/index.tsx ***!
-  \**************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var NavBar_1 = __importDefault(__webpack_require__(/*! ../Components/NavBar */ "./resources/js/Components/NavBar.tsx"));
-
-var index = function index() {
-  return react_1["default"].createElement("div", null, react_1["default"].createElement(NavBar_1["default"], null));
-};
-
-exports["default"] = index;
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -59110,13 +59079,10 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./": "./resources/js/Pages/index.tsx",
 	"./Auth/Auth": "./resources/js/Pages/Auth/Auth.tsx",
 	"./Auth/Auth.tsx": "./resources/js/Pages/Auth/Auth.tsx",
 	"./Home/Home": "./resources/js/Pages/Home/Home.tsx",
-	"./Home/Home.tsx": "./resources/js/Pages/Home/Home.tsx",
-	"./index": "./resources/js/Pages/index.tsx",
-	"./index.tsx": "./resources/js/Pages/index.tsx"
+	"./Home/Home.tsx": "./resources/js/Pages/Home/Home.tsx"
 };
 
 
