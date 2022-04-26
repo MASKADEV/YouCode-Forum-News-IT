@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface props {
     setRegister : React.Dispatch<React.SetStateAction<boolean>>;
@@ -6,10 +6,14 @@ interface props {
 }
 
 const Signin = ({setRegister, register} : props) => {
+
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
   return (
-    <div className='w-screen mt-[10rem]'>
+    <div className={`w-screen mt-[5rem] `}>
         <div className='container mx-auto flex items-center justify-center'>
-            <form className="bg-white shadow-md rounded-md px-11 pt-6 pb-8 mb-4 m-auto">
+            <form className={`bg-white shadow-md rounded-md px-11 pt-6 pb-8 mb-4 m-auto`}>
                 <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                     Email
