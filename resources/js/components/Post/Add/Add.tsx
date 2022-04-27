@@ -1,13 +1,15 @@
 import { Inertia } from '@inertiajs/inertia';
 import React, { ReactEventHandler, useState } from 'react'
 
-interface props {
-
+interface values {
+    'title' : string,
+    'body' : string,
+    'user_id' : number
 }
 
-const Add:React.FC<props> = () => {
+const Add:React.FC = () => {
 
-    const [values, setvalues] = useState<object>({
+    const [values, setvalues] = useState<values>({
         'title' : '',
         'body' : '',
         'user_id' : 1,
