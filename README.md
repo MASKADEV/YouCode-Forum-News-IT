@@ -39,11 +39,9 @@
 
 <div class="sc-7lcum6-0 edCusw"><h2 class="ekeyz-0 dPTSJD">Learning methods</h2><div><div><p class="ekeyz-0 jasXoh">Modalité de travail : Travail Individuel</p>
 <p class="ekeyz-0 jasXoh">Temporalité : 7 Jours</p>
-<p class="ekeyz-0 jasXoh">Date Limite : le 20 Avril 2022</p>
 </div></div></div>
 
 <div class="sc-7lcum6-0 edCusw"><h2 class="ekeyz-0 dPTSJD">Deliverables</h2><p class="ekeyz-0 jasXoh">Planification du brief ( Taches , Priorités , Statuts ,  Outil : Trello , ..... ). (1 jour)
 Partie Front end (3 jours )
 Partie Back end (3 jours )
 Repo Github contenant l'application. (6 jours )
-Un support de présentation du brief (le 20 avril 2022) .</p></div>
