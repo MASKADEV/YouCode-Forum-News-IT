@@ -1,9 +1,13 @@
 import React from 'react'
+import Layout from '../../components/common/Layout'
+import { Head } from '@inertiajs/inertia-react'
 
-const HomePage = () => {
+const index = () => {
   return (
-    <div>Welcome to Home Page</div>
+    <Layout>
+        <Head title='Home'/>
+    </Layout>
   )
 }
 
-export default HomePage
+export default index

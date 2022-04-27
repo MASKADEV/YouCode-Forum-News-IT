@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
             'password' => \bcrypt('password'),
             ]
         );
+
+        \App\Models\Post::factory(10)->create();
     }
 }

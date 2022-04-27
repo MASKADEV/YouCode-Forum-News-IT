@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Home/index');
+        return Inertia::render('Home/Index');
     }
 }
