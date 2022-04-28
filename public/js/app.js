@@ -7569,13 +7569,15 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
+var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 var Add = function Add() {
   var _ref = (0, react_1.useState)({
     'title': '',
     'body': '',
-    'user_id': 1
+    'image_url': null
   }),
       _ref2 = _slicedToArray(_ref, 2),
       values = _ref2[0],
@@ -7588,7 +7590,18 @@ var Add = function Add() {
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    console.log(values); // Inertia.post('/post/store', values);
+    var data = new FormData();
+    data.append('title', values.title);
+    data.append('body', values.body);
+    data.append('image_url', values.image_url); // console.log(data);
+
+    inertia_1.Inertia.post('/post/store', data, {
+      forceFormData: true
+    });
+  };
+
+  var setCover = function setCover(e) {
+    values.image_url = e.target.files[0];
   };
 
   return react_1["default"].createElement("div", null, react_1["default"].createElement("form", {
@@ -7600,24 +7613,34 @@ var Add = function Add() {
     htmlFor: "title",
     className: "block mb-2 text-sm font-medium text-black "
   }, "Title*"), react_1["default"].createElement("input", {
+    value: values.title,
     placeholder: 'title ...',
     onChange: handleChange,
-    name: values.title,
+    name: "title",
     required: true,
     type: "text",
     id: "title",
     className: "block py-4 w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-  })), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+  })), react_1["default"].createElement("div", {
+    className: 'mb-6'
+  }, react_1["default"].createElement("label", {
     htmlFor: "description",
     className: "block mb-2 text-sm font-medium text-gray-900 "
   }, "Description*"), react_1["default"].createElement("input", {
+    value: values.body,
     onChange: handleChange,
-    name: values.body,
+    name: "body",
     required: true,
     type: "text",
     id: "description",
     className: "block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 ",
     placeholder: 'Description ....'
+  })), react_1["default"].createElement("div", null, react_1["default"].createElement("label", {
+    htmlFor: "image_src",
+    className: "block mb-2 text-sm font-medium text-gray-900 "
+  }, "Upload Image*"), react_1["default"].createElement("input", {
+    onChange: setCover,
+    type: "file"
   })), react_1["default"].createElement("button", {
     className: 'mt-11 px-4 py-3 bg-indigo-500 font-medium text-white w-[130px] self-center rounded-md shadow-md',
     type: 'submit'
