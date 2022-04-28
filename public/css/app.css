@@ -531,6 +531,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-11 {
   margin-top: 2.75rem;
 }
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.mt-9 {
+  margin-top: 2.25rem;
+}
 .block {
   display: block;
 }
@@ -555,6 +561,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[4rem\] {
   height: 4rem;
 }
+.h-\[11rem\] {
+  height: 11rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -573,14 +582,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[3rem\] {
   width: 3rem;
 }
-.w-\[50\%\] {
-  width: 50%;
+.w-\[11rem\] {
+  width: 11rem;
 }
 .w-full {
   width: 100%;
 }
+.w-\[50\%\] {
+  width: 50%;
+}
 .w-\[130px\] {
   width: 130px;
+}
+.w-\[50\$\] {
+  width: 50$;
+}
+.w-\[505\] {
+  width: 505;
+}
+.w-\[30\%\] {
+  width: 30%;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -608,6 +629,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .rounded-lg {
   border-radius: 0.5rem;
@@ -749,6 +773,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -771,6 +799,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
@@ -886,6 +922,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:border-l {
     border-left-width: 1px;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 @media (min-width: 1024px) {

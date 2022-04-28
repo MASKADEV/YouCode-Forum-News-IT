@@ -17,10 +17,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create(
             ['name' => 'youness',
             'email' => 'maska@maska.com',
+            'profile_url' => null,
             'password' => \bcrypt('password'),
             ]
         );
-
-        \App\Models\Post::factory(10)->create();
     }
 }

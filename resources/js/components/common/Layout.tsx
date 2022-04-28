@@ -8,7 +8,7 @@ export default function Layout({ children } : any) {
         <Menu />
       </header>
       <div>1</div>
-      <article className='mt-24'>{children}</article>
+      <article className='mt-24 w-screen'>{children}</article>
     </main>
   )
 }

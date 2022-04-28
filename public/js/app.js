@@ -7502,6 +7502,77 @@ exports["default"] = Add;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Profile/View/Index.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Profile/View/Index.tsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/Layout */ "./resources/js/components/common/Layout.tsx"));
+
+var Index = function Index(_ref) {
+  var profile_details = _ref.profile_details;
+  return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
+    title: 'Profile'
+  }), react_1["default"].createElement("div", {
+    className: 'flex flex-col items-center'
+  }, react_1["default"].createElement("div", {
+    className: 'h-[11rem] mb-6 bg-gray-100 w-[11rem] shadow-lg rounded-full items-center flex justify-center'
+  }, "Profile Image"), react_1["default"].createElement("form", {
+    action: "",
+    className: 'w-full'
+  }, react_1["default"].createElement("div", {
+    className: "mb-6 w-[30%] mt-3 mx-auto flex flex-row items-center"
+  }, react_1["default"].createElement("input", {
+    disabled: true,
+    value: profile_details.name,
+    name: "title",
+    required: true,
+    type: "text",
+    id: "title",
+    className: "block py-4 w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
+  }), react_1["default"].createElement("h1", {
+    className: 'ml-2 hover:cursor-pointer text-indigo-600'
+  }, "Edit")), react_1["default"].createElement("div", {
+    className: "mb-6 w-[30%] mx-auto flex flex-row items-center"
+  }, react_1["default"].createElement("input", {
+    disabled: true,
+    value: profile_details.email,
+    name: "title",
+    required: true,
+    type: "text",
+    id: "title",
+    className: "block py-4 w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
+  }), react_1["default"].createElement("h1", {
+    className: 'ml-2 hover:cursor-pointer text-indigo-600'
+  }, "Edit"))), react_1["default"].createElement("div", {
+    className: 'mt-9 font-bold'
+  }, react_1["default"].createElement("h1", {
+    className: 'md:text-2xl text-indigo-600 text-md'
+  }, "My Articles"))));
+};
+
+exports["default"] = Index;
+
+/***/ }),
+
 /***/ "./resources/js/components/Post/Add/Add.tsx":
 /*!**************************************************!*\
   !*** ./resources/js/components/Post/Add/Add.tsx ***!
@@ -7679,7 +7750,7 @@ function Layout(_ref) {
   return react_1["default"].createElement("main", {
     className: 'font-[Poppins]'
   }, react_1["default"].createElement("header", null, react_1["default"].createElement(NavBar_1["default"], null)), react_1["default"].createElement("div", null, "1"), react_1["default"].createElement("article", {
-    className: 'mt-24'
+    className: 'mt-24 w-screen'
   }, children));
 }
 
@@ -64254,7 +64325,9 @@ var map = {
 	"./Home/Index": "./resources/js/Pages/Home/Index.tsx",
 	"./Home/Index.tsx": "./resources/js/Pages/Home/Index.tsx",
 	"./Post/Add/Add": "./resources/js/Pages/Post/Add/Add.tsx",
-	"./Post/Add/Add.tsx": "./resources/js/Pages/Post/Add/Add.tsx"
+	"./Post/Add/Add.tsx": "./resources/js/Pages/Post/Add/Add.tsx",
+	"./Profile/View/Index": "./resources/js/Pages/Profile/View/Index.tsx",
+	"./Profile/View/Index.tsx": "./resources/js/Pages/Profile/View/Index.tsx"
 };
 
 
