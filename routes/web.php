@@ -13,10 +13,10 @@ Auth::routes();
 
 //Private Routes
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     //Post Crud
     Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+    Route::get('/home', [App\Http\Controllers\PostController::class, 'latest'])->name('home');
     Route::get('/add', [App\Http\Controllers\PostController::class, 'add'])->name('posts.add');
     Route::post('/post/store', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 

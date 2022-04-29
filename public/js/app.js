@@ -7469,6 +7469,86 @@ exports["default"] = index;
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Home/Latest/Latest.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Home/Latest/Latest.tsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/Layout */ "./resources/js/components/common/Layout.tsx"));
+
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+var Latest = function Latest(_ref) {
+  var latestPosts = _ref.latestPosts;
+  return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
+    title: 'Latest'
+  }), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+    className: 'flex flex-row'
+  }, react_1["default"].createElement(inertia_react_1.Link, {
+    href: '/home/trending'
+  }, react_1["default"].createElement("h1", {
+    className: 'mx-2 px-4 py-2 font-bold text-[2rem]'
+  }, "Trending")), react_1["default"].createElement(inertia_react_1.Link, {
+    href: '/home'
+  }, react_1["default"].createElement("h1", {
+    className: 'mx-2 px-4 py-2 font-bold text-[2rem] underline'
+  }, "Latest"))), react_1["default"].createElement("div", null, latestPosts.length && latestPosts.map(function (element, index) {
+    return react_1["default"].createElement("div", {
+      className: "w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl"
+    }, react_1["default"].createElement("div", {
+      className: "flex flex-row items-center justify-between h-[6rem]"
+    }, react_1["default"].createElement("div", {
+      className: "flex flex-col"
+    }, react_1["default"].createElement("h1", {
+      className: "font-bold sm:text-2xl text-base w-[80%]"
+    }, element.title), react_1["default"].createElement("p", {
+      className: "text-gray-400 text-[13px]"
+    }, element.created_at)), react_1["default"].createElement("div", {
+      className: "flex flex-col justify-evenly items-center"
+    }, react_1["default"].createElement("p", {
+      className: "text-2xl font-bold font-[Poppins]"
+    }, "30"))), react_1["default"].createElement("div", null, element.image_url != null && react_1["default"].createElement("img", {
+      src: "http://127.0.0.1:8000/uploads/images/".concat(element.image_url),
+      alt: "",
+      className: 'h-[300px]'
+    })), react_1["default"].createElement("p", {
+      className: " text-gray-400 mt-4"
+    }, " ", element.body, " "), react_1["default"].createElement("div", {
+      className: " mt-5 flex flex-row justify-between"
+    }, react_1["default"].createElement("div", {
+      className: "flex flex-row justify-between w-full"
+    }, react_1["default"].createElement("div", {
+      className: "hover:cursor-pointer"
+    }, react_1["default"].createElement("p", {
+      className: "ml-2"
+    }, "Comments")), react_1["default"].createElement("div", {
+      className: "sm:flex flex-row items-center text-gray-400 text-base hover:cursor-pointer"
+    }, react_1["default"].createElement("p", {
+      className: ""
+    }, "Autor")))));
+  }))));
+};
+
+exports["default"] = Latest;
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Post/Add/Add.tsx":
 /*!*********************************************!*\
   !*** ./resources/js/Pages/Post/Add/Add.tsx ***!
@@ -64324,6 +64404,8 @@ module.exports = function getSideChannel() {
 var map = {
 	"./Home/Index": "./resources/js/Pages/Home/Index.tsx",
 	"./Home/Index.tsx": "./resources/js/Pages/Home/Index.tsx",
+	"./Home/Latest/Latest": "./resources/js/Pages/Home/Latest/Latest.tsx",
+	"./Home/Latest/Latest.tsx": "./resources/js/Pages/Home/Latest/Latest.tsx",
 	"./Post/Add/Add": "./resources/js/Pages/Post/Add/Add.tsx",
 	"./Post/Add/Add.tsx": "./resources/js/Pages/Post/Add/Add.tsx",
 	"./Profile/View/Index": "./resources/js/Pages/Profile/View/Index.tsx",

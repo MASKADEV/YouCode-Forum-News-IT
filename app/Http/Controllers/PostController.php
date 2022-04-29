@@ -28,15 +28,29 @@ class PostController extends Controller
             'body' => ['required'],
             'image_url' => ['nullable', 'image']
         ]);
+
+        if($request->hasFile('image_url'))
+        {
+            $file = $request->file('image_url');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/images/', $filename);
+        }
         
+
         Post::create([
             'title' => $postData['title'],
             'body' => $postData['body'],
-            'image_url' => $request->file('image_url') ? $request->file('image_url')->store('images', 'public') : null,
+            'image_url' => $request->file('image_url') ? $filename : null,
             'user_id' => Auth::user()->id,
             ]
         );
 
         return Redirect::route('home');
+    }
+
+    public function latest(){
+        $latestPosts = Post::all();
+        return Inertia::render('Home/Latest/Latest', ['latestPosts' => $latestPosts]);
     }
 }
