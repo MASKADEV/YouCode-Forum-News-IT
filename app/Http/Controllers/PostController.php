@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,5 +53,13 @@ class PostController extends Controller
     public function latest(){
         $latestPosts = Post::all();
         return Inertia::render('Home/Latest/Latest', ['latestPosts' => $latestPosts]);
+    }
+
+    public function postPreview($id) {
+
+        $postDetails = Post::find($id);
+        $comments = Comment::get()->where('post_id', $id);
+        return Inertia::render('Post/Preview/Preview',['postDetails' => $postDetails, 'comments' => $comments]);
+
     }
 }

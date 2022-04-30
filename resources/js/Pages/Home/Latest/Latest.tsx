@@ -17,32 +17,32 @@ const Latest: React.FC<props> = ({latestPosts}) => {
             </div>
             <div >
                 {
-                    latestPosts.length && latestPosts.map((element : any, index : number)=> {
-                        return  <div className="w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl">
-                                    <div className="flex flex-row items-center justify-between h-[6rem]">
-                                        <div className="flex flex-col">
-                                            <h1 className="font-bold sm:text-2xl text-base w-[80%]">{element.title}</h1>
-                                            <p className="text-gray-400 text-[13px]">{element.created_at}</p>
-                                        </div>
-                                        <div className="flex flex-col justify-evenly items-center">
-                                            <p className="text-2xl font-bold font-[Poppins]">30</p>
-                                        </div>
+                latestPosts.length && latestPosts.map((element : any, index : number)=> {
+                    return  <div key={index} className="w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl">
+                                <div className="flex flex-row items-center justify-between h-[6rem]">
+                                    <div className="flex flex-col">
+                                        <h1 className="font-bold sm:text-2xl text-base w-[80%]">{element.title}</h1>
+                                        <p className="text-gray-400 text-[13px]">{element.created_at}</p>
                                     </div>
-                                    <div>
-                                        {element.image_url != null && <img src={`http://127.0.0.1:8000/uploads/images/${element.image_url}`} alt="" className='h-[300px]'/>}
+                                    <div className="flex flex-col justify-evenly items-center">
+                                        <p className="text-2xl font-bold font-[Poppins]">30</p>
                                     </div>
-                                    <p className=" text-gray-400 mt-4"> {element.body} </p>
-                                    <div className=" mt-5 flex flex-row justify-between">
+                                </div>
+                                <div>
+                                    {element.image_url != null && <img src={`http://127.0.0.1:8000/uploads/images/${element.image_url}`} alt="" className='h-[300px]'/>}
+                                </div>
+                                <p className=" text-gray-400 mt-4"> {element.body} </p>
+                                <div className=" mt-5 flex flex-row justify-between">
                                     <div className="flex flex-row justify-between w-full">
                                         <div className="hover:cursor-pointer">
-                                            <p className="ml-2">Comments</p>
+                                            <Link href={`/postpreview/${element.id}`} className="ml-2">Comments</Link>
                                         </div>
                                         <div className="sm:flex flex-row items-center text-gray-400 text-base hover:cursor-pointer">
                                             <p className="">Autor</p>
                                         </div>
                                     </div>
-                                    </div>
-                                 </div>
+                                </div>
+                        </div>
                     })
                 }
             </div>

@@ -7510,6 +7510,7 @@ var Latest = function Latest(_ref) {
     className: 'mx-2 px-4 py-2 font-bold text-[2rem] underline'
   }, "Latest"))), react_1["default"].createElement("div", null, latestPosts.length && latestPosts.map(function (element, index) {
     return react_1["default"].createElement("div", {
+      key: index,
       className: "w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl"
     }, react_1["default"].createElement("div", {
       className: "flex flex-row items-center justify-between h-[6rem]"
@@ -7535,7 +7536,8 @@ var Latest = function Latest(_ref) {
       className: "flex flex-row justify-between w-full"
     }, react_1["default"].createElement("div", {
       className: "hover:cursor-pointer"
-    }, react_1["default"].createElement("p", {
+    }, react_1["default"].createElement(inertia_react_1.Link, {
+      href: "/postpreview/".concat(element.id),
       className: "ml-2"
     }, "Comments")), react_1["default"].createElement("div", {
       className: "sm:flex flex-row items-center text-gray-400 text-base hover:cursor-pointer"
@@ -7579,6 +7581,162 @@ var Add = function Add() {
 };
 
 exports["default"] = Add;
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Post/Preview/Preview.tsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/Pages/Post/Preview/Preview.tsx ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var Layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/Layout */ "./resources/js/components/common/Layout.tsx"));
+
+var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
+var Preview = function Preview(_ref) {
+  var postDetails = _ref.postDetails,
+      comments = _ref.comments;
+
+  var _ref2 = (0, react_1.useState)({
+    'body': '',
+    'post_id': postDetails.id
+  }),
+      _ref3 = _slicedToArray(_ref2, 2),
+      comment = _ref3[0],
+      setcomment = _ref3[1];
+
+  var handleComment = function handleComment(e) {
+    e.preventDefault();
+    setcomment(Object.assign(Object.assign({}, comment), _defineProperty({}, e.target.name, e.target.value)));
+  };
+
+  var handleSubmit = function handleSubmit(e) {
+    // e.preventDefault();
+    inertia_1.Inertia.post('/addComment', comment);
+  };
+
+  return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement("div", {
+    className: "w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-row items-center justify-between h-[6rem]"
+  }, react_1["default"].createElement("div", {
+    className: "flex flex-col"
+  }, react_1["default"].createElement("h1", {
+    className: "font-bold sm:text-2xl text-base w-[80%]"
+  }, postDetails.title), react_1["default"].createElement("p", {
+    className: "text-gray-400 text-[13px]"
+  }, postDetails.created_at)), react_1["default"].createElement("div", {
+    className: "flex flex-col justify-evenly items-center"
+  }, react_1["default"].createElement("p", {
+    className: "text-2xl font-bold font-[Poppins]"
+  }, "30"))), react_1["default"].createElement("div", null, postDetails.image_url != null && react_1["default"].createElement("img", {
+    src: "http://127.0.0.1:8000/uploads/images/".concat(postDetails.image_url),
+    alt: "",
+    className: 'h-[300px]'
+  })), react_1["default"].createElement("p", {
+    className: " text-gray-400 mt-4"
+  }, " ", postDetails.body, " ")), react_1["default"].createElement("div", null, comments.length && comments.map(function (element, index) {
+    return react_1["default"].createElement("div", {
+      key: index
+    }, react_1["default"].createElement("div", {
+      className: 'px-4 py-4 mt-3 shadow rounded-sm md:w-[50%] w-full'
+    }, react_1["default"].createElement("div", {
+      className: 'flex flex-row justify-between items-center'
+    }, react_1["default"].createElement("p", null, element.body), react_1["default"].createElement("button", {
+      className: 'text-red-600'
+    }, "Delete"))));
+  })), react_1["default"].createElement("div", {
+    className: "max-w-lg shadow-md mt-5"
+  }, react_1["default"].createElement("form", {
+    onSubmit: handleSubmit,
+    className: "w-full p-2"
+  }, react_1["default"].createElement("div", {
+    className: "mb-2"
+  }, react_1["default"].createElement("label", {
+    htmlFor: "comment",
+    className: "text-lg text-gray-600"
+  }, "Add a comment"), react_1["default"].createElement("textarea", {
+    value: comment.body,
+    onChange: handleComment,
+    className: "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+    name: "comment",
+    placeholder: ""
+  })), react_1["default"].createElement("button", {
+    className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
+  }, "Comment"))));
+};
+
+exports["default"] = Preview;
 
 /***/ }),
 
@@ -64408,6 +64566,8 @@ var map = {
 	"./Home/Latest/Latest.tsx": "./resources/js/Pages/Home/Latest/Latest.tsx",
 	"./Post/Add/Add": "./resources/js/Pages/Post/Add/Add.tsx",
 	"./Post/Add/Add.tsx": "./resources/js/Pages/Post/Add/Add.tsx",
+	"./Post/Preview/Preview": "./resources/js/Pages/Post/Preview/Preview.tsx",
+	"./Post/Preview/Preview.tsx": "./resources/js/Pages/Post/Preview/Preview.tsx",
 	"./Profile/View/Index": "./resources/js/Pages/Profile/View/Index.tsx",
 	"./Profile/View/Index.tsx": "./resources/js/Pages/Profile/View/Index.tsx"
 };

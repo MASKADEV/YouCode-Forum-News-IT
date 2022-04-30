@@ -21,5 +21,12 @@ class DatabaseSeeder extends Seeder
             'password' => \bcrypt('password'),
             ]
         );
+
+        \App\Models\Comment::factory(10)->create(
+            ['body' => ' asjhdb asbdj habsjdh bajhsbd asd',
+             'useer_id' => '1',
+             'post_id' => 21
+            ]
+        );
     }
 }
