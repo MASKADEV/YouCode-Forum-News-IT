@@ -57,7 +57,7 @@ const Preview:React.FC<props> = ({postDetails, comments}) => {
                 })
             }
         </div>
-        <div className="max-w-lg shadow-md mt-5">
+        {/* <div className="max-w-lg shadow-md mt-5">
             <form onSubmit={handleSubmit} className="w-full p-2">
                 <div className="mb-2">
                     <label htmlFor="comment" className="text-lg text-gray-600">Add a comment</label>
@@ -66,7 +66,7 @@ const Preview:React.FC<props> = ({postDetails, comments}) => {
                 </div>
                 <button className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">Comment</button>
             </form>
-        </div>
+        </div> */}
     </Layout>
   )
 }
