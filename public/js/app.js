@@ -7715,7 +7715,25 @@ var Preview = function Preview(_ref) {
     }, react_1["default"].createElement("p", null, element.body), react_1["default"].createElement("button", {
       className: 'text-red-600'
     }, "Delete"))));
-  })));
+  })), react_1["default"].createElement("div", {
+    className: "max-w-lg shadow-md mt-5"
+  }, react_1["default"].createElement("form", {
+    onSubmit: handleSubmit,
+    className: "w-full p-2"
+  }, react_1["default"].createElement("div", {
+    className: "mb-2"
+  }, react_1["default"].createElement("label", {
+    htmlFor: "comment",
+    className: "text-lg text-gray-600"
+  }, "Add a comment"), react_1["default"].createElement("textarea", {
+    value: comment.body,
+    onChange: handleComment,
+    className: "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+    name: "comment",
+    placeholder: ""
+  })), react_1["default"].createElement("button", {
+    className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
+  }, "Comment"))));
 };
 
 exports["default"] = Preview;
