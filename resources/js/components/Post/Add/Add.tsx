@@ -31,7 +31,6 @@ const Add:React.FC = () => {
         data.append('title', values.title);
         data.append('body', values.body);
         data.append('image_url', values.image_url);
-        // console.log(data);
         Inertia.post('/post/store', data, {
             forceFormData: true,
           });

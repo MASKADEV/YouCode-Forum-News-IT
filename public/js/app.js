@@ -7680,9 +7680,21 @@ var Preview = function Preview(_ref) {
     setcomment(Object.assign(Object.assign({}, comment), _defineProperty({}, e.target.name, e.target.value)));
   };
 
+  var deleteComment = function deleteComment(id) {
+    var data = new FormData();
+    data.append('id', id.toString());
+    data.append('post_id', postDetails.id); // Inertia.delete('/deleteComment', data);
+  };
+
   var handleSubmit = function handleSubmit(e) {
-    // e.preventDefault();
-    inertia_1.Inertia.post('/addComment', comment);
+    e.preventDefault();
+    var data = new FormData();
+    data.append('body', comment.body);
+    data.append('post_id', comment.post_id.toString());
+    inertia_1.Inertia.post('/addComment', data, {
+      forceFormData: true
+    });
+    comment.body = '';
   };
 
   return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement("div", {
@@ -7713,10 +7725,13 @@ var Preview = function Preview(_ref) {
     }, react_1["default"].createElement("div", {
       className: 'flex flex-row justify-between items-center'
     }, react_1["default"].createElement("p", null, element.body), react_1["default"].createElement("button", {
+      onClick: function onClick() {
+        deleteComment(element.id);
+      },
       className: 'text-red-600'
     }, "Delete"))));
   })), react_1["default"].createElement("div", {
-    className: "max-w-lg shadow-md mt-5"
+    className: "max-w-lg shadow my-5"
   }, react_1["default"].createElement("form", {
     onSubmit: handleSubmit,
     className: "w-full p-2"
@@ -7725,14 +7740,15 @@ var Preview = function Preview(_ref) {
   }, react_1["default"].createElement("label", {
     htmlFor: "comment",
     className: "text-lg text-gray-600"
-  }, "Add a comment"), react_1["default"].createElement("textarea", {
+  }, "Add a comment"), react_1["default"].createElement("input", {
     value: comment.body,
     onChange: handleComment,
-    className: "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
-    name: "comment",
+    className: "w-full p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+    name: "body",
     placeholder: ""
   })), react_1["default"].createElement("button", {
-    className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
+    className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
+    type: 'submit'
   }, "Comment"))));
 };
 
@@ -7902,8 +7918,7 @@ var Add = function Add() {
     var data = new FormData();
     data.append('title', values.title);
     data.append('body', values.body);
-    data.append('image_url', values.image_url); // console.log(data);
-
+    data.append('image_url', values.image_url);
     inertia_1.Inertia.post('/post/store', data, {
       forceFormData: true
     });

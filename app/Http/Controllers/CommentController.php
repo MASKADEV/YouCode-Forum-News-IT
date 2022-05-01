@@ -9,10 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class CommentController extends Controller
 {
-    public function addComment(Request $request, $id) {
-
+    public function addComment(Request $request) {
         $comment = $this->validate($request, [
-            'first_name' => ['required', 'max:50'],
+            'body' => ['required'],
             'post_id' => ['required']
         ]);
 
@@ -21,7 +20,12 @@ class CommentController extends Controller
             'user_id' => Auth::user()->id,
             'post_id' => $comment['post_id']
         ]);
-
         return Redirect::route('posts.preview', $comment['post_id']);
+    }
+
+    public function deleteComment($id) {
+        $comment = Comment::find($id[0]);
+        $comment->delete();
+        return Redirect::route('posts.preview', $id(1));
     }
 }

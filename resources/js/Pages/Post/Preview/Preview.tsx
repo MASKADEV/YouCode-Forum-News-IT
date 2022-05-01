@@ -7,23 +7,41 @@ interface props {
     comments : Array<any>,
 }
 
+interface comment {
+    'body' : string,
+    'post_id' : number
+}
+
 const Preview:React.FC<props> = ({postDetails, comments}) => {
 
-    const [comment, setcomment] = useState<any>({
+    const [comment, setcomment] = useState<comment>({
         'body' : '',
         'post_id' : postDetails.id
     })
 
-    const handleComment = (e : React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleComment = (e : React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         setcomment({...comment,
             [e.target.name]: e.target.value
         });
     }
 
+    const deleteComment = (id : number) {
+        let data = new FormData();
+        data.append('id', id.toString());
+        data.append('post_id', postDetails.id);
+        // Inertia.delete('/deleteComment', data);
+    }
+
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
-        // e.preventDefault();
-        Inertia.post('/addComment', comment);
+        e.preventDefault();
+        let data = new FormData();
+        data.append('body', comment.body);
+        data.append('post_id', comment.post_id.toString());
+        Inertia.post('/addComment', data, {
+            forceFormData: true,
+          });
+        comment.body = '';
     }
 
   return (
@@ -50,21 +68,21 @@ const Preview:React.FC<props> = ({postDetails, comments}) => {
                         <div className='px-4 py-4 mt-3 shadow rounded-sm md:w-[50%] w-full'>
                             <div className='flex flex-row justify-between items-center'>
                                 <p>{element.body}</p>
-                                <button className='text-red-600'>Delete</button>
+                                <button onClick={() => {deleteComment(element.id);}} className='text-red-600'>Delete</button>
                             </div>
                         </div>
                     </div>
                 })
             }
         </div>
-        <div className="max-w-lg shadow-md mt-5">
+        <div className="max-w-lg shadow my-5">
             <form onSubmit={handleSubmit} className="w-full p-2">
                 <div className="mb-2">
                     <label htmlFor="comment" className="text-lg text-gray-600">Add a comment</label>
-                    <textarea value={comment.body} onChange={handleComment} className="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
-                    name="comment" placeholder=""></textarea>
+                    <input value={comment.body} onChange={handleComment} className="w-full p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                    name="body" placeholder=""/>
                 </div>
-                <button className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">Comment</button>
+                <button className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded" type='submit'>Comment</button>
             </form>
         </div>
     </Layout>
