@@ -26,7 +26,7 @@ const Preview:React.FC<props> = ({postDetails, comments}) => {
         });
     }
 
-    const deleteComment = (id : number) {
+    const deleteComment = (id : number) => {
         let data = new FormData();
         data.append('id', id.toString());
         data.append('post_id', postDetails.id);
