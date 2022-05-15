@@ -15,7 +15,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function postcomments() {
+    public function postComment() {
         return $this->hasMany(Comment::class);
     }
 }

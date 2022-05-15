@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -37,7 +38,6 @@ class PostController extends Controller
             $filename = time() . '.' . $extention;
             $file->move('uploads/images/', $filename);
         }
-        
 
         Post::create([
             'title' => $postData['title'],
@@ -56,10 +56,8 @@ class PostController extends Controller
     }
 
     public function postPreview($id) {
-
         $postDetails = Post::find($id);
         $comments = Comment::get()->where('post_id', $id);
         return Inertia::render('Post/Preview/Preview',['postDetails' => $postDetails, 'comments' => $comments]);
-
     }
 }

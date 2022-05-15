@@ -14,7 +14,6 @@ class CommentController extends Controller
             'body' => ['required'],
             'post_id' => ['required']
         ]);
-
         Comment::create([
             'body' => $comment['body'],
             'user_id' => Auth::user()->id,
@@ -23,9 +22,13 @@ class CommentController extends Controller
         return Redirect::route('posts.preview', $comment['post_id']);
     }
 
-    public function deleteComment($id) {
-        $comment = Comment::find($id[0]);
+    public function deleteComment(Request $request) {
+        $comment = $this->validate($request, [
+            'id' => ['required'],
+            'post_id' => ['required']
+        ]);
+        $comment = Comment::find($comment['id']);
         $comment->delete();
-        return Redirect::route('posts.preview', $id(1));
+        return Redirect::route('posts.preview', $comment['post_id']);
     }
 }
