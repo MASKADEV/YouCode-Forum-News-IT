@@ -7498,7 +7498,11 @@ var Latest = function Latest(_ref) {
   var latestPosts = _ref.latestPosts;
   return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement(inertia_react_1.Head, {
     title: 'Latest'
-  }), react_1["default"].createElement("div", null, react_1["default"].createElement("div", {
+  }), react_1["default"].createElement("div", {
+    className: 'w-full'
+  }, react_1["default"].createElement("div", {
+    className: 'sm:w-[60%] w-[90%] mx-auto'
+  }, react_1["default"].createElement("div", {
     className: 'flex flex-row'
   }, react_1["default"].createElement(inertia_react_1.Link, {
     href: '/home/trending'
@@ -7522,15 +7526,27 @@ var Latest = function Latest(_ref) {
       className: "text-gray-400 text-[13px]"
     }, element.created_at)), react_1["default"].createElement("div", {
       className: "flex flex-col justify-evenly items-center"
-    }, react_1["default"].createElement("p", {
+    }, react_1["default"].createElement("img", {
+      src: "https://www.svgrepo.com/show/16833/up-arrow.svg",
+      width: "180",
+      height: "180",
+      className: 'w-[30px] cursor-pointer',
+      alt: "Up Arrow SVG Vector",
+      title: "Up Arrow SVG Vector"
+    }), react_1["default"].createElement("p", {
       className: "text-2xl font-bold font-[Poppins]"
-    }, "30"))), react_1["default"].createElement("div", null, element.image_url != null && react_1["default"].createElement("img", {
+    }, "30"), react_1["default"].createElement("img", {
+      src: "https://www.svgrepo.com/show/145159/down-arrow.svg",
+      className: 'w-[30px] cursor-pointer',
+      alt: "Down Arrow SVG Vector",
+      title: "Down Arrow SVG Vector"
+    }))), react_1["default"].createElement("div", null, element.image_url != null && react_1["default"].createElement("img", {
       src: "http://127.0.0.1:8000/uploads/images/".concat(element.image_url),
       alt: "",
       className: 'h-[300px]'
     })), react_1["default"].createElement("p", {
       className: " text-gray-400 mt-4"
-    }, " ", element.body, " "), react_1["default"].createElement("div", {
+    }, " ", element.body.split(" ")[0] + " " + element.body.split(" ")[1], " "), react_1["default"].createElement("div", {
       className: " mt-5 flex flex-row justify-between"
     }, react_1["default"].createElement("div", {
       className: "flex flex-row justify-between w-full"
@@ -7544,7 +7560,7 @@ var Latest = function Latest(_ref) {
     }, react_1["default"].createElement("p", {
       className: ""
     }, "Autor")))));
-  }))));
+  })))));
 };
 
 exports["default"] = Latest;
@@ -7683,14 +7699,18 @@ var Preview = function Preview(_ref) {
   var deleteComment = function deleteComment(id) {
     var data = new FormData();
     data.append('id', id.toString());
-    data.append('post_id', postDetails.id); // Inertia.delete('/deleteComment', data);
+    data.append('post_id', postDetails.id);
+    inertia_1.Inertia.post('/deleteComment', data, {
+      forceFormData: true
+    });
   };
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     var data = new FormData();
     data.append('body', comment.body);
-    data.append('post_id', comment.post_id.toString());
+    data.append('post_id', comment.post_id.toString()); // console.log(data);        
+
     inertia_1.Inertia.post('/addComment', data, {
       forceFormData: true
     });
@@ -7698,13 +7718,17 @@ var Preview = function Preview(_ref) {
   };
 
   return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement("div", {
-    className: "w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl"
+    className: 'flex flex-col w-full'
+  }, react_1["default"].createElement("div", {
+    className: 'md:w-[60%] w-[90%] mx-auto'
+  }, react_1["default"].createElement("div", {
+    className: " bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl mx-auto"
   }, react_1["default"].createElement("div", {
     className: "flex flex-row items-center justify-between h-[6rem]"
   }, react_1["default"].createElement("div", {
     className: "flex flex-col"
   }, react_1["default"].createElement("h1", {
-    className: "font-bold sm:text-2xl text-base w-[80%]"
+    className: "font-bold sm:text-2xl text-base w-full"
   }, postDetails.title), react_1["default"].createElement("p", {
     className: "text-gray-400 text-[13px]"
   }, postDetails.created_at)), react_1["default"].createElement("div", {
@@ -7717,21 +7741,21 @@ var Preview = function Preview(_ref) {
     className: 'h-[300px]'
   })), react_1["default"].createElement("p", {
     className: " text-gray-400 mt-4"
-  }, " ", postDetails.body, " ")), react_1["default"].createElement("div", null, comments.length && comments.map(function (element, index) {
+  }, " ", postDetails.body, " ")), react_1["default"].createElement("div", null, Object.keys(comments).map(function (element, index) {
     return react_1["default"].createElement("div", {
       key: index
     }, react_1["default"].createElement("div", {
-      className: 'px-4 py-4 mt-3 shadow rounded-sm md:w-[50%] w-full'
+      className: 'px-4 py-4 mt-3 shadow rounded-sm'
     }, react_1["default"].createElement("div", {
       className: 'flex flex-row justify-between items-center'
-    }, react_1["default"].createElement("p", null, element.body), react_1["default"].createElement("button", {
-      onClick: function onClick() {
-        deleteComment(element.id);
+    }, react_1["default"].createElement("p", null, comments[index].body), react_1["default"].createElement("button", {
+      onClick: function onClick(e) {
+        deleteComment(comments[index].id);
       },
       className: 'text-red-600'
     }, "Delete"))));
   })), react_1["default"].createElement("div", {
-    className: "max-w-lg shadow my-5"
+    className: "shadow my-5"
   }, react_1["default"].createElement("form", {
     onSubmit: handleSubmit,
     className: "w-full p-2"
@@ -7749,7 +7773,7 @@ var Preview = function Preview(_ref) {
   })), react_1["default"].createElement("button", {
     className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
     type: 'submit'
-  }, "Comment"))));
+  }, "Comment"))))));
 };
 
 exports["default"] = Preview;
@@ -8049,7 +8073,10 @@ var Menu = function Menu() {
   }, "Home"), react_1["default"].createElement(inertia_react_1.Link, {
     className: 'px-3 ml-3 font-medium',
     href: "/profile"
-  }, "Profile")), react_1["default"].createElement("div", null, react_1["default"].createElement(inertia_react_1.Link, {
+  }, "Profile"), react_1["default"].createElement(inertia_react_1.Link, {
+    className: 'px-3 ml-3 font-medium',
+    href: "/add"
+  }, "Add Post")), react_1["default"].createElement("div", null, react_1["default"].createElement(inertia_react_1.Link, {
     method: 'POST',
     href: "/logout"
   }, "Logout")))));

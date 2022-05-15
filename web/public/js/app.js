@@ -7647,19 +7647,11 @@ var __importStar = this && this.__importStar || function (mod) {
   return result;
 };
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var Layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/Layout */ "./resources/js/components/common/Layout.tsx"));
 
 var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
@@ -7681,9 +7673,10 @@ var Preview = function Preview(_ref) {
   };
 
   var deleteComment = function deleteComment(id) {
-    var data = new FormData();
-    data.append('id', id.toString());
-    data.append('post_id', postDetails.id); // Inertia.delete('/deleteComment', data);
+    console.log(id); // let data = new FormData();
+    // data.append('id', id.toString());
+    // data.append('post_id', postDetails.id);
+    // Inertia.delete('/deleteComment', data);
   };
 
   var handleSubmit = function handleSubmit(e) {
@@ -7697,59 +7690,48 @@ var Preview = function Preview(_ref) {
     comment.body = '';
   };
 
-  return react_1["default"].createElement(Layout_1["default"], null, react_1["default"].createElement("div", {
-    className: "w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-row items-center justify-between h-[6rem]"
-  }, react_1["default"].createElement("div", {
-    className: "flex flex-col"
-  }, react_1["default"].createElement("h1", {
-    className: "font-bold sm:text-2xl text-base w-[80%]"
-  }, postDetails.title), react_1["default"].createElement("p", {
-    className: "text-gray-400 text-[13px]"
-  }, postDetails.created_at)), react_1["default"].createElement("div", {
-    className: "flex flex-col justify-evenly items-center"
-  }, react_1["default"].createElement("p", {
-    className: "text-2xl font-bold font-[Poppins]"
-  }, "30"))), react_1["default"].createElement("div", null, postDetails.image_url != null && react_1["default"].createElement("img", {
-    src: "http://127.0.0.1:8000/uploads/images/".concat(postDetails.image_url),
-    alt: "",
-    className: 'h-[300px]'
-  })), react_1["default"].createElement("p", {
-    className: " text-gray-400 mt-4"
-  }, " ", postDetails.body, " ")), react_1["default"].createElement("div", null, comments.length && comments.map(function (element, index) {
-    return react_1["default"].createElement("div", {
-      key: index
-    }, react_1["default"].createElement("div", {
-      className: 'px-4 py-4 mt-3 shadow rounded-sm md:w-[50%] w-full'
-    }, react_1["default"].createElement("div", {
-      className: 'flex flex-row justify-between items-center'
-    }, react_1["default"].createElement("p", null, element.body), react_1["default"].createElement("button", {
-      onClick: function onClick() {
-        deleteComment(element.id);
-      },
-      className: 'text-red-600'
-    }, "Delete"))));
-  })), react_1["default"].createElement("div", {
-    className: "max-w-lg shadow my-5"
-  }, react_1["default"].createElement("form", {
-    onSubmit: handleSubmit,
-    className: "w-full p-2"
-  }, react_1["default"].createElement("div", {
-    className: "mb-2"
-  }, react_1["default"].createElement("label", {
-    htmlFor: "comment",
-    className: "text-lg text-gray-600"
-  }, "Add a comment"), react_1["default"].createElement("input", {
-    value: comment.body,
-    onChange: handleComment,
-    className: "w-full p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
-    name: "body",
-    placeholder: ""
-  })), react_1["default"].createElement("button", {
-    className: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
-    type: 'submit'
-  }, "Comment"))));
+  return react_1["default"].createElement("div", null, "maska") // <Layout>
+  //     <div className="w-[90%] max-w-2xl bg-white font-[Poppins] py-7 px-9 mb-6 shadow-md rounded-xl">
+  //         <div className="flex flex-row items-center justify-between h-[6rem]">
+  //             <div className="flex flex-col">
+  //             <h1 className="font-bold sm:text-2xl text-base w-[80%]">{postDetails.title}</h1>
+  //             <p className="text-gray-400 text-[13px]">{postDetails.created_at}</p>
+  //             </div>
+  //                 <div className="flex flex-col justify-evenly items-center">
+  //                     <p className="text-2xl font-bold font-[Poppins]">30</p>
+  //                 </div>
+  //         </div>
+  //         <div>
+  //             {postDetails.image_url != null && <img src={`http://127.0.0.1:8000/uploads/images/${postDetails.image_url}`} alt="" className='h-[300px]'/>}
+  //         </div>
+  //         <p className=" text-gray-400 mt-4"> {postDetails.body} </p>
+  //     </div>
+  //     <div>
+  //         {
+  //             comments.length && comments.map((element : any, index) => {
+  //                 return <div key={index}>
+  //                     <div className='px-4 py-4 mt-3 shadow rounded-sm md:w-[50%] w-full'>
+  //                         <div className='flex flex-row justify-between items-center'>
+  //                             <p>{element.body}</p>
+  //                             <button onClick={(e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {deleteComment(element.id);}} className='text-red-600'>Delete</button>
+  //                         </div>
+  //                     </div>
+  //                 </div>
+  //             })
+  //         }
+  //     </div>
+  //     <div className="max-w-lg shadow my-5">
+  //         <form onSubmit={handleSubmit} className="w-full p-2">
+  //             <div className="mb-2">
+  //                 <label htmlFor="comment" className="text-lg text-gray-600">Add a comment</label>
+  //                 <input value={comment.body} onChange={handleComment} className="w-full p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+  //                 name="body" placeholder=""/>
+  //             </div>
+  //             <button className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded" type='submit'>Comment</button>
+  //         </form>
+  //     </div>
+  // </Layout>
+  ;
 };
 
 exports["default"] = Preview;
