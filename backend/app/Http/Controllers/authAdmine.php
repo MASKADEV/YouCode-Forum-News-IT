@@ -63,19 +63,7 @@ class authAdmine extends Controller
     }
     public function logout(Request $request)
     {
-
-        // auth('sanctum')->user()->currentAccessToken()->delete();
-        // $request->utilisateur()->currentAccessToken()->delete();
-        // $this->->token()->revoke();   
-        //  Auth::user()->tokens->each(function($token, $key) {
-        //    ->tokens()->delete();
-        // auth('sanctum')-> $request->user()->tokens()->delete();
-        // $request->user()->currentAccessToken()->delete()
-        // $request->user()->token()->delete();
         $request->admin()->tokens()->delete();
-
-
-
         return [
             'message' => 'Logged out'
 

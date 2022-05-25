@@ -88,16 +88,10 @@ class CommentController extends Controller
 
     public function getAllComments()
     {
-
         return DB::table('comments')
             ->join('utilisateurs', 'comments.utilisateur_id', '=', 'utilisateurs.id')
             ->join('posts', 'comments.post_id', '=', 'posts.id')
             ->select('*')
             ->get();
-        // return post::join
-        // ('utilisateurs', 'posts.utilisateur_id', '=', 'utilisateurs.id')
-        // // ->join('orders', 'users.id', '=', 'orders.user_id')
-        // ->select('posts.id')
-        // ->get();
     }
 }

@@ -161,7 +161,6 @@ class PostController extends Controller
                 $comment->setAttribute('user', utilisateur::find($comment->utilisateur_id));
             }
         }
-
         return response(array(
             'posts' => $posts
         ), 200);

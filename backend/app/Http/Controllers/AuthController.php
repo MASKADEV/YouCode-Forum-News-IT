@@ -75,32 +75,15 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
-
-        // auth('sanctum')->user()->currentAccessToken()->delete();
-        // $request->utilisateur()->currentAccessToken()->delete();
-        // $this->->token()->revoke();   
-        //  Auth::user()->tokens->each(function($token, $key) {
-        //    ->tokens()->delete();
-        // auth('sanctum')-> $request->user()->tokens()->delete();
-        // $request->user()->currentAccessToken()->delete()
-        // $request->user()->token()->delete();
         $request->user()->tokens()->delete();
-
-
-
         return [
             'message' => 'Logged out'
-
         ];
     }
 
-    public function test($id)
-    {
-    }
     // function getAge 
     public function  getAge($date_naissance)
     {
-
         $date = new DateTime($date_naissance);
         $now = new DateTime();
         $interval = $now->diff($date);
@@ -110,34 +93,12 @@ class AuthController extends Controller
     // update user info 
     public function update(Request $request, $id)
     {
-
-        // $fields = $request->validate([
-        //     'nom' => 'required|String',
-        //     'prenom' => 'required|String',
-        //     'date_naissance' => 'required|Date',
-        //     'email' => 'required|string|unique :utilisateurs,email',
-        //     'pass' => 'required|string'
-        // ]);
-        // $utilisateur = utilisateur::create([
-        //     'nom' => $fields['nom'],
-        //     'prenom' => $fields['prenom'],
-        //     'date_naissance' => $fields['date_naissance'],
-        //     'age' => $this->getAge($fields['date_naissance']),
-        //     'email' => $fields['email'],
-        //     'pass' => bcrypt($fields['pass'])
-        // ]);
         $fields = $request->all();
-
-
-        
         if (isset($fields['pass'])) {
             $fields['pass'] = bcrypt($fields['pass']);
         }
         $user = utilisateur::find($id);
-
-
         $user->update($fields);
-
         return $user;
     }
 
@@ -148,15 +109,12 @@ class AuthController extends Controller
     }
 
     //test old pass
-
     public function testPass(Request $request,$id)
     {
-
         $fields = $request->validate([
-
             'pass' => 'required'
         ]);
-        // check email
+        // check id
         $utilisateur = utilisateur::where('id',$id)->first();
         // check password
         if (!$utilisateur || !Hash::check($fields['pass'], $utilisateur->pass)) {
