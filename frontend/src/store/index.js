@@ -1,16 +1,8 @@
 
 
 import { createStore } from "vuex";
-import axios from "axios";
-// import axiosClient from "../axios";
 import axiosClient from "../axios";
-import { useRouter } from 'vue-router';
-
-
-import { UserAddIcon } from "@heroicons/vue/solid";
 import router from "../router";
-
-
 
 
 const store = createStore({
@@ -19,9 +11,6 @@ const store = createStore({
             data: {},
             tokenAdmin: sessionStorage.getItem("TOKEN_ADMIN"),
         },
-
-
-
         user: {
             data: {},
             token: sessionStorage.getItem("TOKEN"),
@@ -41,7 +30,6 @@ const store = createStore({
 
         },
 
-
     },
     getters: {},
 
@@ -49,15 +37,8 @@ const store = createStore({
         // admin
         getAllUsers({ commit }) {
             return axiosClient.get('/users')
-                .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });                    
+                .then(response => {                 
                     commit("setUsers", response.data);
-                    // console.log(response.data.posts);
                     return response.data
                 });
 
@@ -66,13 +47,6 @@ const store = createStore({
         deleteUser({ commit }, id) {
             return axiosClient.delete('/user/'+id)
                 .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });                    
-                    // console.log(response.data.posts);
                     return response.data
                 });
 
@@ -82,26 +56,14 @@ const store = createStore({
         loginAdmin({ commit }, admin) {
             return axiosClient.post('/loginAdmin' ,admin)
                 .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });    
                     if (response.data.message == "success") {
                     commit("setTokenAdmin", response.data.token);
 
-                    }        
-
-                    // console.log(response.data.posts);
+                    }
                     return response.data
                 });
 
         },
-
-        // end admin
-
-
 
         register({ commit }, user) {
 
@@ -179,15 +141,8 @@ const store = createStore({
 
 
             return axiosClient.get('/post')
-                .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });                    
+                .then(response => {                 
                     commit("setPosts", response.data);
-                    // console.log(response.data.posts);
                     return response.data
                 });
 
@@ -196,13 +151,6 @@ const store = createStore({
         getAllComments({ commit }) {
             return axiosClient.get('/getAllComments')
                 .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });                    
-                    // commit("setComments", response.data);
                     return response.data
                 });
 
@@ -228,22 +176,12 @@ const store = createStore({
             console.log(id)
             return axiosClient.get('/post/categorie/' + id)
                 .then(response => {
-                    // response.data.forEach(obj => {
-                    //     Object.entries(obj).forEach(([key, value]) => {
-                    //         console.log(`${key} ${value}`);
-                    //         if()
-
-                    //     }); });    
-                    console.log(response.data)
-
                     commit("setPosts", response.data);
-                    // console.log(response.data.posts);
                     return response.data
                 });
         },
 
         // add post
-
         addPost({ commit }, post) {
             return axiosClient.post('/post', post)
                 .then(response => {
@@ -257,11 +195,7 @@ const store = createStore({
         getInfoUser({ commit }, id) {
             return axiosClient.get('/user/' + id)
                 .then(response => {
-                    // console.log(response.data)
-
-
                     commit("setUser", response.data);
-
                     return response;
 
                 });
@@ -273,7 +207,6 @@ const store = createStore({
             return axiosClient.put('/user/' + user.id, user.info)
                 .then(response => {
                     console.log(response.data)
-                    // commit("setUser", response.data);
                     return response;
 
                 });
@@ -285,8 +218,6 @@ const store = createStore({
                 pass: user.pass.old
             })
                 .then(response => {
-
-
                     return response.data;
 
                 }).catch(function (error) {
@@ -298,7 +229,6 @@ const store = createStore({
             return axiosClient.get('/post/user/' + user)
                 .then(response => {
                     commit("setPosts", response.data);
-
                     console.log(response.data);
                     return response.data;
 
@@ -348,39 +278,14 @@ const store = createStore({
     mutations: {
         setPosts: (state, posts) => {
             state.post.data = posts;
-            // state.post.comment= "fdfdddf";
-
-
         },
         setComments: (state, comments) => {
-
-            // for (let i = 0; i < state.post.data.length; i++) {
-            //     state.post.data[i]['comments'] = [];
-            // }
-            // for (let i = 0; i < comments.length; i++) {
-            //     let p = state.post.data.findIndex(x => x.id == comments[i].post_id)
-
-            //     if (p != -1) {
-            //         let post = {};
-            //         post = comments[i];
-            //         state.post.data[p]['comments'].push(post);
-
-            //     }
-            // }
-
 
         },
         setUser: (state, user) => {
             state.user.data = user;
-
             state.user.id = user.id;
-
-
             sessionStorage.setItem('idUser', state.user.id);
-            // sessionStorage.setItem('userInfo', JSON.stringify(state.user.data));
-            // sessionStorage.setItem('userInfos', "state.user.data");
-
-
         },
         setCategories: (state, categorie) => {
             state.categorie.data = categorie;
@@ -404,21 +309,10 @@ const store = createStore({
             // this.redirectTo({ val: "Login" });
             router.push("Login")
         },
-
         //admin
-
         setUsers: (state, users) => {
             state.users.data = users;
-
-            // state.user.id = user.id;
-
-
-            // sessionStorage.setItem('userInfo', JSON.stringify(state.user.data));
-            // sessionStorage.setItem('userInfos', "state.user.data");
-
-
         },
-
 
         setTokenAdmin: (state, token) => {
             state.user.token = token;
@@ -426,7 +320,5 @@ const store = createStore({
         },
     },
     modules: {},
-
-
 })
 export default store;

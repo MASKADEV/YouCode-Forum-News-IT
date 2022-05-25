@@ -1,18 +1,14 @@
 <template>
-    <div>
-        <img class="mx-auto h-24 w-24" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Taskful_Logo.svg"
-            alt="Workflow" />
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account {{ role }}</h2>
-        <p class="mt-2 text-center text-sm text-gray-600" v-if="this.$parent.$options.name == 'SignInForm'">
-            <!-- 
-          {{ ' ' }} -->
-            Or
-            <router-link :to="{ name: 'Register' }"> <a href="#"
-                    class="font-medium text-indigo-600 hover:text-indigo-500">
-                    register for free </a></router-link>
-        </p>
+<div>
+        <div>
+        <h1 class="md:text-4xl text-md font-bold text-indigo-700 text-center">Brand.</h1>
+        <div class="flex flex-row text-md items-center mt-11">
+            <h2 class="text-starttext-gray-900">Sign in to your account {{ role }}</h2>
+            <p class="text-center font-medium text-gray-600 ml-1" v-if="this.$parent.$options.name == 'SignInForm'">
+            <router-link :to="{ name: 'Register' }"> <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">register for free </a></router-link></p>
+        </div>
     </div>
-    <div v-if="error" class="bg-red-100 rounded-lg py-5 px-6 mb-4 text-base text-red-700 mb-3" role="alert">
+    <div v-if="error" class="bg-red-100 rounded-lg py-5 px-6 text-base text-red-700 mb-3" role="alert">
         email ou mot de pass incorrect !
     </div>
     <form class="mt-8 space-y-6" @submit="login">
@@ -55,11 +51,10 @@
             </button>
         </div>
     </form>
+</div>
 </template>
 <script >
 import { mapActions } from "vuex";
-import useValidate from "@vuelidate/core";
-import { required, maxLength } from "@vuelidate/validators";
 import { LockClosedIcon } from '@heroicons/vue/solid'
 import { useRouter } from 'vue-router';
 import store from "../store";
@@ -91,28 +86,8 @@ export default {
     },
     methods: {
         ...mapActions(["redirectTo"]),
-
-        // alidations() {
-        //   return {
-        //     reff: { required, maxLength: maxLength(10) },
-        //   }
-        // },
         login(ev) {
-
             ev.preventDefault();
-
-
-            // store
-            //     .dispatch('login', this.user)
-            //     .then((response) => {
-
-
-            //         console.log(response);
-            //         if (response.data.message != "success") {
-            //             this.error = true
-            //         }
-            //         this.redirectTo({ val: "HomePage" });
-            //     })
             console.log(this.$parent.$options.name)
 
             if (this.$parent.$options.name == 'SignInForm') {
@@ -120,15 +95,12 @@ export default {
                 store
                     .dispatch('login', this.user)
                     .then((response) => {
-
-
                         console.log(response);
                         if (response.data.message != "success") {
                             this.error = true
                         }
                         this.redirectTo({ val: "HomePage" });
                     })
-
 
             } else if (this.$parent.$options.name == 'LoginAdmin') {
 
@@ -158,23 +130,7 @@ export default {
         // admin login
 
         loginAdmin(ev) {
-
             ev.preventDefault();
-
-
-            // store
-            //     .dispatch('loginAdmin', this.user)
-            //     .then((response) => {
-
-
-            //         console.log(response);
-            //         if (response.data.message != "success") {
-            //             this.error = true
-            //         }
-            //         this.redirectTo({ val: "HomePage" });
-            //     })
-
-
         },
 
 

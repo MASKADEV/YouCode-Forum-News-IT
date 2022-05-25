@@ -1,43 +1,13 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
 <template>
-    <!--
-    This example requires updating your template:
 
-    ```
-    <html class="h-full bg-gray-50">
-    <body class="h-full">
-    ```
-  -->
-
-    <div>
-        <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
-
-        <img class="mx-auto h-24 w-24" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Taskful_Logo.svg"
-            alt="Workflow" />
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Register for free</h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-            <!-- 
-             
-          {{ ' ' }} --> Or
-            <router-link :to="{ name: 'Login' }"> <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-                    login to your account </a> </router-link>
-            <!-- <h1  @click="redirectTo({ val: 'Login' })"> SBSDD</h1> -->
-        </p>
+<div>
+        <div>
+        <h1 class="md:text-4xl text-md font-bold text-indigo-700 text-center">Brand.</h1>
+        <div class="flex flex-row text-md items-center mt-11">
+            <h2 class="text-center text-gray-900">Register for free</h2>
+            <p class="text-center font-medium ml-1 text-gray-600">
+            <router-link :to="{ name: 'Login' }"> <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">login to your account </a> </router-link></p>
+        </div>
     </div>
     <form class="mt-8 space-y-6" @submit="register">
         <input type="hidden" name="remember" value="true" />
@@ -102,6 +72,7 @@
             </button>
         </div>
     </form>
+</div>
 
 </template>
 
@@ -142,10 +113,6 @@ export default {
                 .dispatch('register', this.user)
                 .then((response) => {
                     this.redirectTo({ val: "login" });
-
-                    // router.push({
-                    //     name: 'HomePage'
-                    // })
                 })
 
         }
@@ -155,8 +122,6 @@ export default {
     },
     mounted() {
         let e = sessionStorage.getItem("TOKEN");
-        // }
-        // this.setCategories();
         if (e) {
             this.redirectTo({ val: "HomePage" });
 

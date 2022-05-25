@@ -131,7 +131,6 @@
 </template>
 
 <script>
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { BanIcon, HeartIcon, PencilAltIcon } from '@heroicons/vue/outline'
 import post from '../components/post.vue'
 import { mapActions } from "vuex";
@@ -196,31 +195,13 @@ export default {
               ...mapActions(["redirectTo"]),
 
     getInfoUser() {
-      console.log(this.user.id);
-      // console.log(sessionStorage.getItem("userInfo").length);
-      // console.log('retrievedObject: ' ,JSON.parse(store.state.user.data));
-      // this.user.prenom = store.state.user.data.nom;
-      // this.user.nom = store.state.user.data.nom;
-      // this.user.email = store.state.user.data.email;
-      // this.user.date_naissance = store.state.user.data.date_naissance;
       store
         .dispatch('getInfoUser', this.user.id)
         .then((response) => {
-          // console.log(response)
-          console.log(response);
-
           this.user.info = response.data;
-          // this.user.pass = "";          // store
-          //   .dispatch('getAllComments')
-          // console.log(response);
-
-
-
         })
-      // this.user.prenom=store.state.user.data.nom;
     },
     updateUser(ev) {
-      // console.log(this.user.pass.old)
       ev.preventDefault();
       var test = "";
       if (this.user.pass.old != "" && this.user.pass.new != "") {
@@ -228,7 +209,6 @@ export default {
         store
           .dispatch('testPass', this.user)
           .then((response) => {
-            // console.log(response)
             if (response.message == "sucess") {
               this.user.info.pass = this.user.pass.new;
               store
@@ -238,13 +218,11 @@ export default {
                   this.user.pass.new = "";
                   this.user.pass.old = "";
                   this.msgUpdate = true
-                  // this.getInfoUser()
                 })
 
             } else {
               console.log("ereur mdp")
             };
-
           })
 
 
@@ -269,15 +247,10 @@ export default {
     // 
     let e = sessionStorage.getItem("TOKEN");
     // }
-    // this.setCategories();
     if (!e) {
       this.redirectTo({ val: "Login" });
-
     }
-
     this.getInfoUser();
-    // this.setCategories();
-    // console.log(this.user.info)
   }
 }
 </script>
