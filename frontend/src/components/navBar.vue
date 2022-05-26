@@ -6,9 +6,7 @@
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-
-              <img class="h-8 w-8" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Taskful_Logo.svg"
-                alt="Workflow" />
+              <h1 class="text-white font-bold md:text-2xl">Brand.</h1>
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
@@ -32,15 +30,13 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-
-
               <!-- Profile dropdown -->
               <Menu as="div" class="ml-3 relative">
                 <div>
                   <MenuButton
-                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 ring-white">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" alt="" />
+                    <img src="https://icon-library.com/images/white-menu-icon-png/white-menu-icon-png-18.jpg" class="h-8 w-8 rounded-full" alt="" />
                   </MenuButton>
                 </div>
                 <transition enter-active-class="transition ease-out duration-100"
@@ -49,10 +45,10 @@
                   leave-to-class="transform opacity-0 scale-95">
                   <MenuItems
                     class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <MenuItem v-slot="{ active }">
+                    <!-- <MenuItem v-slot="{ active }"> -->
                     <a @click="logout" :class="['block px-4 py-2 text-sm text-gray-700 cursor-pointer']">
                       Sign out</a>
-                    </MenuItem>
+                    <!-- </MenuItem> -->
                   </MenuItems>
                 </transition>
               </Menu>

@@ -1,59 +1,23 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <!-- component -->
-
-
-
-  <div class="bg-gray-100 bg-gray-100">
+  <div class="bg-gray-100">
     <div class="w-full text-white bg-main-color">
       <div x-data="{ open: false }"
         class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-
-
       </div>
     </div>
+
     <!-- End of Navbar -->
-    <div v-if="msgUpdate" class="bg-yellow-100 rounded-lg py-5 px-6 mb-4 text-base text-yellow-700 mb-3" role="alert">
+    <div v-if="msgUpdate" class="bg-yellow-100 rounded-lg py-5 px-6 text-base text-yellow-700 mb-3" role="alert">
       Bien modifier </div>
 
-    <div class="container mx-auto my-5 p-5">
-      <div class="md:flex no-wrap md:-mx-2 ">
-        <!-- Left Side -->
-        <div class="w-full md:w-3/12 md:mx-2">
-          <!-- Profile Card -->
-          <div class="bg-white p-3 border-t-4 border-green-400">
-            <div class="image overflow-hidden">
-              <img class="h-auto w-full mx-auto"
-                src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg" alt="">
-            </div>
-            <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
-
-            <ul
-              class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
-              <li class="flex items-center py-3">
-                <span>Status</span>
-                <span class="ml-auto"><span
-                    class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
-              </li>
-              <li class="flex items-center py-3">
-                <span>Member since</span>
-                <span class="ml-auto">{{ user.created_at }}</span>
-              </li>
-            </ul>
-          </div>
-          <!-- End of profile card -->
-          <div class="my-4"></div>
-          <!-- Friends card -->
-
-          <!-- End of friends card -->
-        </div>
+    <div class="container w-auto mx-auto my-4 p-5">
+      <div class="md:flex no-wrap mx-auto">
         <!-- Right Side -->
-
-        <div class="w-full md:w-9/12 mx-2 h-64">
+        <div class="md:w-[70%] py-5 mx-auto rounded-lg">
           <!-- Profile tab -->
-          <!-- About Section -->
           <form @submit="updateUser">
-
             <div class="bg-white p-3 shadow-sm rounded-sm">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                 <span clas="text-green-500">
@@ -103,7 +67,6 @@
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                       type="password" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-
                 </div>
               </div>
               <button type="submit"
@@ -112,16 +75,12 @@
             </div>
           </form>
           <!-- End of about section -->
-
           <div class="my-4">
             <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">MY POSTS</h1>
           </div>
-
           <!-- post  -->
           <post>
-
           </post>
-
           <!-- End post -->
           <!-- End of profile tab -->
         </div>
@@ -236,12 +195,7 @@ export default {
 
           })
       }
-
     },
-
-
-
-
   },
   mounted() {
     // 
