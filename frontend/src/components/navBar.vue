@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-full">
 
-    <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-indigo-800" v-slot="{ open }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
@@ -24,7 +24,6 @@
                   class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   users
                 </router-link>
-
               </div>
             </div>
           </div>
@@ -34,7 +33,7 @@
               <Menu as="div" class="ml-3 relative">
                 <div>
                   <MenuButton
-                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 ring-white">
+                    class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm  ring-white">
                     <span class="sr-only">Open user menu</span>
                     <img src="https://icon-library.com/images/white-menu-icon-png/white-menu-icon-png-18.jpg" class="h-8 w-8 rounded-full" alt="" />
                   </MenuButton>
@@ -94,11 +93,6 @@
               <div class="text-base font-medium leading-none text-white">{{ user.name }}</div>
               <div class="text-sm font-medium leading-none text-gray-400">{{ user.email }}</div>
             </div>
-            <button type="button"
-              class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-              <span class="sr-only">View notifications</span>
-              <BellIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
           </div>
           <div class="mt-3 px-2 space-y-1">
             <DisclosureButton as="a" @click="logout"
@@ -106,7 +100,6 @@
               Sign out</DisclosureButton>
           </div>
         </div>
-
       </DisclosurePanel>
     </Disclosure>
     <router-view>
@@ -150,20 +143,14 @@ export default {
       router.push({
         name: 'Login'
       })
-      console.log("ok");
-
     }
   },
   mounted() {
-    console.log( "hada"+this.userss);
-    console.log(this.$parent.$options.name);
-
 
   },
   setup() {
     const store = useStore();
     const router = useRouter();
-    // console.log(this.$parent.$options.name)
     function test() {
       console.log("ok");
 

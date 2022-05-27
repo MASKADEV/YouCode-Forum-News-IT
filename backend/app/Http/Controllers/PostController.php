@@ -25,8 +25,6 @@ class PostController extends Controller
      */
     public function index()
     {
-
-
         $posts = Post::orderBy('created_at', 'desc')->with('utilisateur', 'comments', 'likes', 'dislikes', "categorie")->get();
 
         foreach ($posts as $post) {
@@ -62,22 +60,6 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return DB::table('posts')
-            ->join('utilisateurs', 'posts.utilisateur_id', '=', 'utilisateurs.id')
-            ->join('categories', 'posts.categorie_id', '=', 'categories.id')
-            ->where("utilisateurs.id", 'like',  $id)
-            ->select('*')
-            ->get();
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -105,6 +87,7 @@ class PostController extends Controller
     {
         return post::destroy(($id));
     }
+    
     /**
      * search for a name 
      *
@@ -125,11 +108,11 @@ class PostController extends Controller
                 $comment->setAttribute('user', utilisateur::find($comment->utilisateur_id));
             }
         }
-
         return response(array(
             'posts' => $posts
         ), 200);
     }
+
     //likes
     public function likes(Request $request)
     {
@@ -145,13 +128,14 @@ class PostController extends Controller
     // dilikes
     public function dislikes(Request $request)
     {
-
         return Dislikes::create($request->all());
     }
+
     public function destroydisLike($id)
     {
         return dislikes::destroy(($id));
     }
+
     public function postsByCategorie($id)
     {
         $posts = Post::orderBy('created_at', 'desc')->with('utilisateur', 'comments', 'likes', 'dislikes', "categorie")->where("categorie_id", 'like',  $id)->get();
@@ -161,8 +145,10 @@ class PostController extends Controller
                 $comment->setAttribute('user', utilisateur::find($comment->utilisateur_id));
             }
         }
+
         return response(array(
             'posts' => $posts
         ), 200);
     }
+
 }

@@ -26,7 +26,6 @@
         <div class=" flex-1 px-2 pt-2 mt-3">
           <select v-model="this.postData.categorie_id" required class="border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 
                 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-            <option selected class="text-black">Choose a categorie</option>
             <option :value=elem.id v-for="elem in $store.state.categorie.data" :key="elem.id">{{ elem.nom_categorie }}
             </option>
           </select>

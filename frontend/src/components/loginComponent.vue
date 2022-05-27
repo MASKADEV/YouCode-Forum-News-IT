@@ -5,7 +5,7 @@
         <div class="flex flex-row text-md items-center mt-11">
             <h2 class="text-starttext-gray-900">Sign in to your account {{ role }}</h2>
             <p class="text-center font-medium text-gray-600 ml-1" v-if="this.$parent.$options.name == 'SignInForm'">
-            <router-link :to="{ name: 'Register' }"> <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">register for free </a></router-link></p>
+            <router-link :to="{ name: 'Register' }"> <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">register</a></router-link></p>
         </div>
     </div>
     <div v-if="error" class="bg-red-100 rounded-lg py-5 px-6 text-base text-red-700 mb-3" role="alert">

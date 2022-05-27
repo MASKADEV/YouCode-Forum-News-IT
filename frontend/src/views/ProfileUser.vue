@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <!-- component -->
   <div class="bg-gray-100">
@@ -7,61 +6,52 @@
         class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
       </div>
     </div>
-
     <!-- End of Navbar -->
-    <div v-if="msgUpdate" class="bg-yellow-100 rounded-lg py-5 px-6 text-base text-yellow-700 mb-3" role="alert">
+    <div v-if="msgUpdate" class="bg-green-400 rounded-lg py-5 px-6 text-base text-yellow-700 mb-3" role="alert">
       Bien modifier </div>
-
     <div class="container w-auto mx-auto my-4 p-5">
-      <div class="md:flex no-wrap mx-auto">
+      <div class="flex md:flex-row flex-col mx-auto">
         <!-- Right Side -->
-        <div class="md:w-[70%] py-5 mx-auto rounded-lg">
+        <div class="md:w-[50%] w-[90%] py-5 mx-auto rounded-lg">
           <!-- Profile tab -->
           <form @submit="updateUser">
             <div class="bg-white p-3 shadow-sm rounded-sm">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                <span clas="text-green-500">
-                  <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </span>
-                <span class="tracking-wide">About</span>
+                <h1 class="md:text-2xl text-medium">Details</h1>
               </div>
               <div class="text-gray-700">
                 <div class="grid md:grid-cols-2 text-sm">
-                  <div class="grid grid-cols-2  mt-4 ">
+                  <div class="grid grid-cols-1  mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold">Prenom</div>
                     <input v-model="user.info.prenom" placeholder="prenom"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                       required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-                  <div class="grid grid-cols-2 mt-4">
+                  <div class="grid grid-cols-1 mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold">Nom</div>
                     <input placeholder="Nom" v-model="user.info.nom"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                       required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-                  <div class="grid grid-cols-2 mt-4">
+                  <div class="grid grid-cols-1 mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold">email</div>
                     <input placeholder="Email " v-model="user.info.email"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 py-2"
                       required="required" type="email" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-                  <div class="grid grid-cols-2 mt-4">
+                  <div class="grid grid-cols-1 mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold"> date de naissance</div>
-                    <input placeholder="date de naissance" v-model="user.info.date_naissance"
+                    <input disabled placeholder="date de naissance" v-model="user.info.date_naissance"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                       required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-                  <div class="grid grid-cols-2 mt-4">
+                  <div class="grid grid-cols-1 mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold"> old password</div>
                     <input placeholder="old password" v-model="user.pass.old"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                       type="password" name="integration[shop_name]" id="integration_shop_name">
                   </div>
-                  <div class="grid grid-cols-2 mt-4 ">
+                  <div class="grid grid-cols-1 mt-4 mx-1">
                     <div class="px-4 py-2 font-semibold">new password</div>
                     <input placeholder="new password" v-model="user.pass.new"
                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
@@ -74,15 +64,12 @@
               </button>
             </div>
           </form>
-          <!-- End of about section -->
-          <div class="my-4">
-            <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">MY POSTS</h1>
-          </div>
+        </div>
+        <div class="md:w-[70%] md:mx-5">
           <!-- post  -->
           <post>
           </post>
           <!-- End post -->
-          <!-- End of profile tab -->
         </div>
       </div>
     </div>
